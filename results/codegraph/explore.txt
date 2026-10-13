@@ -1,6 +1,6 @@
 **Exploration: why can the cart total become negative**
 
-Found 25 symbols across 4 files.
+Found 26 symbols across 4 files.
 
 **Blast radius — what depends on these (update/verify before editing)**
 
@@ -11,7 +11,7 @@ Found 25 symbols across 4 files.
 
 > The code below is the **verbatim, current on-disk source** of these files — re-read from disk on this call and line-numbered, byte-for-byte identical to what the Read tool returns. It is NOT a summary, outline, or stale cache. Treat each block as a Read you have already performed: do not Read a file shown here.
 
-**`shop/cart.py`** — cart_total(function), cart_summary(function), serialize_cart(function), subtotal(function), checkout_total(function), +4 more
+**`shop/cart.py`** — cart_total(function), cart_summary(function), serialize_cart(function), subtotal(function), checkout_total(function), +5 more
 
 ```python
 1	import datetime

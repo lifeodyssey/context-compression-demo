@@ -4,10 +4,11 @@
   "failed": [
     "tests/test_cart.py::test_freeship_never_negative"
   ],
-  "passed": 86,
-  "collected": 87,
-  "lines": 109,
-  "bytes": 8087,
-  "chars": 8087,
-  "tokens": null
+  "passed": 66,
+  "collected": 67,
+  "lines": 89,
+  "bytes": 6426,
+  "chars": 6426,
+  "tokens": null,
+  "path_normalization": "scripts/normalize_paths.py; repository=/work/context-compression-demo; interpreter=/work/toolchain/python; other absolute paths=/work/external"
 }

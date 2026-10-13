@@ -1,10 +1,10 @@
 Generated 60 issues, 300 log lines, and 303 synonym-log lines (seed=20261013).
 Running pytest
-Confirmed exactly one intended failure; 86 tests passed.
+Confirmed exactly one intended failure; 66 tests passed.
 Running rtk
 Running headroom
 Running caveman
 Running codemode
 Running codegraph
-Validated input invariants and wrote results/metrics.json and results/summary.md.
+Validated required invariants and wrote results/metrics.json and results/summary.md; E1=True, E2=True, E3=False, E4=True, E5=False
 All comparisons completed; see results/summary.md.

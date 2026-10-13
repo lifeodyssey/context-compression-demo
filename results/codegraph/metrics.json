@@ -3,7 +3,7 @@
   "package": "@colbymchenry/codegraph@1.6.2",
   "user_question": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
   "explore_query": "why can the cart total become negative",
-  "scope": "Repository root, with codegraph.json excluding data/, scripts/, tools/, and results/. Shop source and tests are included.",
+  "scope": "Repository root, with codegraph.json excluding data/, scripts/, tools/, results/, and docs/. Shop source and tests are included.",
   "indexed_files": [
     "shop/__init__.py",
     "shop/cart.py",
@@ -16,8 +16,8 @@
     "tests/test_models.py",
     "tests/test_shipping_tax.py"
   ],
-  "indexed_nodes": 134,
-  "indexed_edges": 345,
+  "indexed_nodes": 126,
+  "indexed_edges": 333,
   "commands": {
     "version": {
       "command": [
@@ -47,8 +47,8 @@
       "stdout": "results/codegraph/init.txt",
       "stderr": "results/codegraph/init.stderr.txt",
       "exit_code": 0,
-      "stdout_bytes": 273,
-      "stdout_characters": 253,
+      "stdout_bytes": 246,
+      "stdout_characters": 226,
       "stdout_lines": 15,
       "tokens": null,
       "tokens_note": "The CLI does not report a token count for this output."
@@ -103,7 +103,7 @@
       "stdout_lines": 306,
       "tokens": null,
       "tokens_note": "The CLI does not report a token count for this output.",
-      "symbols_returned": 25,
+      "symbols_returned": 26,
       "files_returned": 4
     }
   }

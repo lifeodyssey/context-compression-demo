@@ -22,6 +22,7 @@ export npm_config_globalconfig="$HOME/npm-globalrc"
 export npm_config_prefer_offline=true
 export npm_config_update_notifier=false
 export CODEGRAPH_TELEMETRY=0 DO_NOT_TRACK=1 NO_COLOR=1
+export HEADROOM_TELEMETRY=0 RTK_TELEMETRY_DISABLED=1 PYTHONDONTWRITEBYTECODE=1
 # Prevent init's watch-disabled fallback from offering/installing Git hooks.
 unset CODEGRAPH_NO_WATCH
 export CODEGRAPH_FORCE_WATCH=1
@@ -47,7 +48,9 @@ capture() {
   shift
   local status=0
   npx -y @colbymchenry/codegraph@1.6.2 "$@" \
-    >"$OUTPUT/$name.txt" 2>"$OUTPUT/$name.stderr.txt" </dev/null || status=$?
+    >"$RUN_TEMP/$name.txt" 2>"$RUN_TEMP/$name.stderr.txt" </dev/null || status=$?
+  python3 scripts/normalize_paths.py "$RUN_TEMP/$name.txt" > "$OUTPUT/$name.txt"
+  python3 scripts/normalize_paths.py "$RUN_TEMP/$name.stderr.txt" > "$OUTPUT/$name.stderr.txt"
   printf '%s\n' "$status" >"$OUTPUT/$name.exit.txt"
   return "$status"
 }
@@ -103,7 +106,7 @@ result = {
     "package": "@colbymchenry/codegraph@1.6.2",
     "user_question": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
     "explore_query": "why can the cart total become negative",
-    "scope": "Repository root, with codegraph.json excluding data/, scripts/, tools/, and results/. Shop source and tests are included.",
+    "scope": "Repository root, with codegraph.json excluding data/, scripts/, tools/, results/, and docs/. Shop source and tests are included.",
     "indexed_files": indexed_files,
     "indexed_nodes": indexed_nodes,
     "indexed_edges": indexed_edges,

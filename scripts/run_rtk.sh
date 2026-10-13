@@ -7,7 +7,22 @@ export HOME="$task_home" XDG_CONFIG_HOME="$task_home/.config" XDG_CACHE_HOME="$t
 export PATH="${PYTEST_BIN_DIR:-/tmp/hrenv/bin}:$PATH"
 export RTK_TELEMETRY_DISABLED=1 DO_NOT_TRACK=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 TERM=dumb NO_COLOR=1
 export RTK_DB_PATH="$task_home/tracking.db"
+export HEADROOM_TELEMETRY=0 CODEGRAPH_TELEMETRY=0
 unset PYTEST_ADDOPTS
+# Normalize the actual child output before RTK filters it or stores recall data.
+export DEMO_PYTEST_BIN="$(command -v pytest)" DEMO_ROOT="$PWD"
+mkdir -p "$task_home/bin"
+cat > "$task_home/bin/pytest" <<'SH'
+#!/usr/bin/env bash
+set +e
+"$DEMO_PYTEST_BIN" "$@" > "$HOME/pytest.stdout" 2> "$HOME/pytest.stderr"
+status=$?
+python3 "$DEMO_ROOT/scripts/normalize_paths.py" "$HOME/pytest.stdout"
+python3 "$DEMO_ROOT/scripts/normalize_paths.py" "$HOME/pytest.stderr" >&2
+exit "$status"
+SH
+chmod +x "$task_home/bin/pytest"
+export PATH="$task_home/bin:$PATH"
 rtk_bin=${RTK_BIN:-/tmp/ctxsrc/rtk/target/release/rtk}
 mkdir -p results/rtk
 "$rtk_bin" --version > results/rtk/version.txt

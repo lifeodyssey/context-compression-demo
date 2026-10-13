@@ -1,8 +1,8 @@
-Pytest: 86 passed, 1 failed in 0.04s
+Pytest: 66 passed, 1 failed in 0.04s
 
 Failures:
 1. [FAIL] test_freeship_never_negative
      tests/test_cart.py:52: in test_freeship_never_negative
      assert cart_total(items, "FREESHIP") == 0.0
      E   AssertionError: assert -2.0 == 0.0
-[full output: rtk recall 8d4da25c5fde]
+[full output: rtk recall 0bb554a7577e]

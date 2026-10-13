@@ -8,10 +8,10 @@ def test_product_defaults():
     assert (product.category, product.taxable, product.weight_kg) == ("general", True, 0)
 
 
-@pytest.mark.parametrize("sku,price,weight", [("", 3, 0), ("TEA", -1, 0), ("TEA", 3, -1)])
-def test_product_rejects_invalid_values(sku, price, weight):
-    with pytest.raises(ValueError):
-        Product(sku, "Tea", price, weight)
+def test_product_rejects_invalid_values():
+    for sku, price, weight in (("", 3, 0), ("TEA", -1, 0), ("TEA", 3, -1)):
+        with pytest.raises(ValueError):
+            Product(sku, "Tea", price, weight)
 
 
 def test_cart_item_exposes_price_and_total_weight():
@@ -20,10 +20,10 @@ def test_cart_item_exposes_price_and_total_weight():
     assert item.weight_kg == 1
 
 
-@pytest.mark.parametrize("quantity", [0, -1, 1.5])
-def test_cart_item_rejects_invalid_quantity(quantity):
-    with pytest.raises(ValueError):
-        CartItem(Product("TEA", "Tea", 3), quantity)
+def test_cart_item_rejects_invalid_quantity():
+    for quantity in (0, -1, 1.5):
+        with pytest.raises(ValueError):
+            CartItem(Product("TEA", "Tea", 3), quantity)
 
 
 def test_address_normalizes_destination():

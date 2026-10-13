@@ -167,12 +167,35 @@
         "file": "shop/cart.py",
         "line": 110
       }
-    }
+    },
+    "test_files": {
+      "tests/test_cart.py": {
+        "bytes": 4437,
+        "chars": 4437,
+        "lines": 149
+      },
+      "tests/test_coupons.py": {
+        "bytes": 1803,
+        "chars": 1803,
+        "lines": 54
+      },
+      "tests/test_models.py": {
+        "bytes": 1425,
+        "chars": 1425,
+        "lines": 46
+      },
+      "tests/test_shipping_tax.py": {
+        "bytes": 1670,
+        "chars": 1670,
+        "lines": 51
+      }
+    },
+    "test_lines": 300
   },
   "inputs": {
     "data/issues.json": {
-      "bytes": 38361,
-      "chars": 38361,
+      "bytes": 34259,
+      "chars": 34259,
       "lines": 1265
     },
     "data/app.log": {
@@ -186,9 +209,9 @@
       "lines": 303
     },
     "results/pytest/raw.txt": {
-      "bytes": 8087,
-      "chars": 8087,
-      "lines": 109
+      "bytes": 6426,
+      "chars": 6426,
+      "lines": 89
     }
   },
   "pytest": {
@@ -197,12 +220,13 @@
     "failed": [
       "tests/test_cart.py::test_freeship_never_negative"
     ],
-    "passed": 86,
-    "collected": 87,
-    "lines": 109,
-    "bytes": 8087,
-    "chars": 8087,
-    "tokens": null
+    "passed": 66,
+    "collected": 67,
+    "lines": 89,
+    "bytes": 6426,
+    "chars": 6426,
+    "tokens": null,
+    "path_normalization": "scripts/normalize_paths.py; repository=/work/context-compression-demo; interpreter=/work/toolchain/python; other absolute paths=/work/external"
   },
   "outputs": {
     "rtk/pytest": {
@@ -220,8 +244,8 @@
     },
     "rtk/issues": {
       "path": "results/rtk/issues.txt",
-      "bytes": 461,
-      "chars": 461,
+      "bytes": 493,
+      "chars": 493,
       "lines": 23,
       "unchanged": false,
       "issue_42_title_survived": false,
@@ -233,9 +257,9 @@
     },
     "headroom/pytest": {
       "path": "results/headroom/pytest.txt",
-      "bytes": 8087,
-      "chars": 8087,
-      "lines": 109,
+      "bytes": 6426,
+      "chars": 6426,
+      "lines": 89,
       "unchanged": true,
       "issue_42_title_survived": false,
       "issue_titles_kept": 0,
@@ -254,52 +278,25 @@
           "protect_recent": 0
         },
         "input_dimensions": {
-          "bytes": 8087,
-          "characters": 8087,
-          "lines": 109
+          "bytes": 6426,
+          "characters": 6426,
+          "lines": 89
         },
         "output_dimensions": {
-          "bytes": 8087,
-          "characters": 8087,
-          "lines": 109
+          "bytes": 6426,
+          "characters": 6426,
+          "lines": 89
         },
         "unchanged": true,
-        "tokens_before": 2271,
-        "tokens_after": 2271,
+        "tokens_before": 1779,
+        "tokens_after": 1779,
         "tokens_saved": 0,
         "token_count_basis": "Headroom local estimator; complete three-message conversation, not provider usage",
         "transforms_applied": [
-          "router:protected:user_message"
+          "router:protected:user_message",
+          "router:protected:error_output"
         ],
-        "routing_events": [
-          {
-            "event": "content_router_input",
-            "chars": 8087,
-            "bytes": 8087,
-            "detected_content_type": "text",
-            "detection_confidence": 0.5,
-            "selected_strategy": "text",
-            "selection_reason": "content_detection"
-          },
-          {
-            "event": "content_router_strategy_result",
-            "requested_strategy": "text",
-            "actual_strategy": "text",
-            "strategy_chain": [
-              "text"
-            ],
-            "compressor": "KompressCompressor",
-            "reason": "text_uses_kompress",
-            "tokens_saved": 0,
-            "compression_ratio": 1.0
-          },
-          {
-            "event": "content_router_output",
-            "selected_strategy": "text",
-            "tokens_saved": 0,
-            "compression_ratio": 1.0
-          }
-        ],
+        "routing_events": [],
         "diagnostics": [
           {
             "message_index": 0,
@@ -318,8 +315,8 @@
           {
             "message_index": 2,
             "role": "user",
-            "tokens_before": 2230,
-            "tokens_after": 2230,
+            "tokens_before": 1738,
+            "tokens_after": 1738,
             "action": "protected:content_blocks_unchanged"
           }
         ]
@@ -327,8 +324,8 @@
     },
     "headroom/issues": {
       "path": "results/headroom/issues.txt",
-      "bytes": 22610,
-      "chars": 22610,
+      "bytes": 18530,
+      "chars": 18530,
       "lines": 61,
       "unchanged": false,
       "issue_42_title_survived": true,
@@ -348,19 +345,19 @@
           "protect_recent": 0
         },
         "input_dimensions": {
-          "bytes": 38361,
-          "characters": 38361,
+          "bytes": 34259,
+          "characters": 34259,
           "lines": 1265
         },
         "output_dimensions": {
-          "bytes": 22610,
-          "characters": 22610,
+          "bytes": 18530,
+          "characters": 18530,
           "lines": 61
         },
         "unchanged": false,
-        "tokens_before": 11484,
-        "tokens_after": 6563,
-        "tokens_saved": 4921,
+        "tokens_before": 10450,
+        "tokens_after": 5536,
+        "tokens_saved": 4914,
         "token_count_basis": "Headroom local estimator; complete three-message conversation, not provider usage",
         "transforms_applied": [
           "router:protected:user_message",
@@ -369,8 +366,8 @@
         "routing_events": [
           {
             "event": "content_router_input",
-            "chars": 38361,
-            "bytes": 38361,
+            "chars": 34259,
+            "bytes": 34259,
             "detected_content_type": "json_array",
             "detection_confidence": 1.0,
             "selected_strategy": "mixed",
@@ -388,14 +385,14 @@
             ],
             "compressor": "SmartCrusher",
             "reason": "smart_crusher",
-            "tokens_saved": 6159,
-            "compression_ratio": 0.48623623623623624
+            "tokens_saved": 5892,
+            "compression_ratio": 0.44965439940220436
           },
           {
             "event": "content_router_output",
             "selected_strategy": "mixed",
-            "tokens_saved": 6159,
-            "compression_ratio": 0.48623623623623624
+            "tokens_saved": 5892,
+            "compression_ratio": 0.44965439940220436
           }
         ],
         "diagnostics": [
@@ -416,8 +413,8 @@
           {
             "message_index": 2,
             "role": "user",
-            "tokens_before": 11442,
-            "tokens_after": 6521,
+            "tokens_before": 10408,
+            "tokens_after": 5494,
             "action": "compressed:content_blocks"
           }
         ],
@@ -492,12 +489,12 @@
     },
     "headroom/smartcrusher_no_query": {
       "path": "results/headroom/smartcrusher_no_query.txt",
-      "bytes": 7701,
-      "chars": 7701,
+      "bytes": 26313,
+      "chars": 26313,
       "lines": 1,
       "unchanged": false,
       "issue_42_title_survived": true,
-      "issue_titles_kept": 15,
+      "issue_titles_kept": 60,
       "freeship_lines_kept": 0,
       "pricing_lines_kept": 0,
       "elided_line_counts": [],
@@ -512,38 +509,83 @@
           "lossless_only": false
         },
         "input_dimensions": {
-          "bytes": 38361,
-          "characters": 38361,
+          "bytes": 34259,
+          "characters": 34259,
           "lines": 1265
         },
         "output_dimensions": {
-          "bytes": 7701,
-          "characters": 7701,
+          "bytes": 26313,
+          "characters": 26313,
           "lines": 1
         },
         "was_modified": true,
-        "strategy": "smart_sample(60->15)",
+        "strategy": "skip:unique_entities_no_signal(60->60)",
         "tokens_before": null,
         "tokens_after": null,
         "token_count_basis": "SmartCrusher.crush does not report token counts",
         "issues_before": 60,
-        "issues_kept": 15,
-        "issues_elided": 45,
+        "issues_kept": 60,
+        "issues_elided": 0,
         "kept_issue_numbers": [
           1,
           2,
+          3,
+          4,
+          5,
           6,
+          7,
+          8,
+          9,
           10,
+          11,
+          12,
+          13,
           14,
+          15,
+          16,
+          17,
           18,
+          19,
+          20,
+          21,
           22,
+          23,
+          24,
+          25,
           26,
+          27,
+          28,
+          29,
           30,
+          31,
+          32,
+          33,
           34,
+          35,
+          36,
+          37,
           38,
+          39,
+          40,
+          41,
           42,
           43,
+          44,
           45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
           60
         ],
         "issue_42_kept": true,
@@ -552,12 +594,12 @@
     },
     "headroom/smartcrusher_query": {
       "path": "results/headroom/smartcrusher_query.txt",
-      "bytes": 7615,
-      "chars": 7615,
+      "bytes": 26313,
+      "chars": 26313,
       "lines": 1,
       "unchanged": false,
       "issue_42_title_survived": true,
-      "issue_titles_kept": 15,
+      "issue_titles_kept": 60,
       "freeship_lines_kept": 0,
       "pricing_lines_kept": 0,
       "elided_line_counts": [],
@@ -572,23 +614,23 @@
           "lossless_only": false
         },
         "input_dimensions": {
-          "bytes": 38361,
-          "characters": 38361,
+          "bytes": 34259,
+          "characters": 34259,
           "lines": 1265
         },
         "output_dimensions": {
-          "bytes": 7615,
-          "characters": 7615,
+          "bytes": 26313,
+          "characters": 26313,
           "lines": 1
         },
         "was_modified": true,
-        "strategy": "smart_sample(60->15)",
+        "strategy": "skip:unique_entities_no_signal(60->60)",
         "tokens_before": null,
         "tokens_after": null,
         "token_count_basis": "SmartCrusher.crush does not report token counts",
         "issues_before": 60,
-        "issues_kept": 15,
-        "issues_elided": 45,
+        "issues_kept": 60,
+        "issues_elided": 0,
         "kept_issue_numbers": [
           1,
           2,
@@ -602,7 +644,52 @@
           10,
           11,
           12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
           42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
           59,
           60
         ],
@@ -612,9 +699,9 @@
     },
     "caveman/pytest_auto": {
       "path": "results/caveman/pytest_auto.txt",
-      "bytes": 8087,
-      "chars": 8087,
-      "lines": 109,
+      "bytes": 6426,
+      "chars": 6426,
+      "lines": 89,
       "unchanged": true,
       "issue_42_title_survived": false,
       "issue_titles_kept": 0,
@@ -630,18 +717,18 @@
         "freeship_lines_kept": 0,
         "input": "results/pytest/raw.txt",
         "input_dimensions": {
-          "bytes": 8087,
-          "characters": 8087,
-          "lines": 109
+          "bytes": 6426,
+          "characters": 6426,
+          "lines": 89
         },
         "lines_elided_in_markers": 0,
         "output_dimensions": {
-          "bytes": 8087,
-          "characters": 8087,
-          "lines": 109
+          "bytes": 6426,
+          "characters": 6426,
+          "lines": 89
         },
-        "passed_test_lines_before": 86,
-        "passed_test_lines_kept": 86,
+        "passed_test_lines_before": 66,
+        "passed_test_lines_kept": 66,
         "passthrough": true,
         "pricing_lines_before": 0,
         "pricing_lines_kept": 0,
@@ -649,16 +736,16 @@
         "ratio": 0,
         "script": "scripts/run_caveman.sh",
         "token_count_basis": "o200k_base",
-        "tokens_after": 2230,
-        "tokens_before": 2230,
+        "tokens_after": 1738,
+        "tokens_before": 1738,
         "unchanged": true
       }
     },
     "caveman/pytest_terminal": {
       "path": "results/caveman/pytest_terminal.txt",
-      "bytes": 7194,
-      "chars": 7146,
-      "lines": 101,
+      "bytes": 6093,
+      "chars": 6065,
+      "lines": 85,
       "unchanged": false,
       "issue_42_title_survived": false,
       "issue_titles_kept": 0,
@@ -666,19 +753,14 @@
       "pricing_lines_kept": 0,
       "elided_line_counts": [
         1,
-        5,
+        3,
         2,
-        2,
-        1,
-        2,
-        1,
-        1,
         2,
         1,
         1,
         1
       ],
-      "elided_lines": 20,
+      "elided_lines": 11,
       "tool_metadata": {
         "basis": "inferred",
         "content_type": "terminal",
@@ -687,48 +769,48 @@
         "freeship_lines_kept": 0,
         "input": "results/pytest/raw.txt",
         "input_dimensions": {
-          "bytes": 8087,
-          "characters": 8087,
-          "lines": 109
+          "bytes": 6426,
+          "characters": 6426,
+          "lines": 89
         },
-        "lines_elided_in_markers": 20,
+        "lines_elided_in_markers": 11,
         "lossless_to_model": false,
         "method": "terminal",
         "output_dimensions": {
-          "bytes": 7194,
-          "characters": 7146,
-          "lines": 101
+          "bytes": 6093,
+          "characters": 6065,
+          "lines": 85
         },
-        "passed_test_lines_before": 86,
-        "passed_test_lines_kept": 70,
+        "passed_test_lines_before": 66,
+        "passed_test_lines_kept": 59,
         "passthrough": false,
         "pricing_lines_before": 0,
         "pricing_lines_kept": 0,
         "query": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
-        "ratio": 0.12062780269058296,
-        "recovery_handle": "ccr_fcbe3842f792468f9d8b133d2d2fb495",
+        "ratio": 0.05983889528193326,
+        "recovery_handle": "ccr_38684f25d7f231b958bd5adc153f740d",
         "script": "scripts/run_caveman.sh",
         "token_count_basis": "o200k_base",
-        "tokens_after": 1961,
-        "tokens_before": 2230,
+        "tokens_after": 1634,
+        "tokens_before": 1738,
         "unchanged": false
       }
     },
     "caveman/issues_no_query": {
       "path": "results/caveman/issues_no_query.txt",
-      "bytes": 7903,
-      "chars": 7897,
-      "lines": 1,
-      "unchanged": false,
+      "bytes": 34259,
+      "chars": 34259,
+      "lines": 1265,
+      "unchanged": true,
       "issue_42_title_survived": true,
-      "issue_titles_kept": 14,
+      "issue_titles_kept": 60,
       "freeship_lines_kept": 0,
       "pricing_lines_kept": 0,
       "elided_line_counts": [],
       "elided_lines": 0,
-      "issue_records_kept": 14,
-      "issue_records_elided": 46,
-      "elision_groups": 5,
+      "issue_records_kept": 60,
+      "issue_records_elided": 0,
+      "elision_groups": 0,
       "tool_metadata": {
         "basis": "inferred",
         "content_type": "json",
@@ -737,14 +819,14 @@
         "freeship_lines_kept": 0,
         "input": "data/issues.json",
         "input_dimensions": {
-          "bytes": 38361,
-          "characters": 38361,
+          "bytes": 34259,
+          "characters": 34259,
           "lines": 1265
         },
         "issue_42_kept": true,
         "issues_before": 60,
-        "issues_elided": 46,
-        "issues_kept": 14,
+        "issues_elided": 0,
+        "issues_kept": 60,
         "kept_issue_numbers": [
           1,
           2,
@@ -753,52 +835,95 @@
           5,
           6,
           7,
+          8,
+          9,
           10,
           11,
+          12,
+          13,
+          14,
+          15,
+          16,
           17,
+          18,
+          19,
+          20,
+          21,
           22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
           42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
           59,
           60
         ],
         "lines_elided_in_markers": 0,
-        "lossless_to_model": false,
-        "method": "elision",
         "output_dimensions": {
-          "bytes": 7903,
-          "characters": 7897,
-          "lines": 1
+          "bytes": 34259,
+          "characters": 34259,
+          "lines": 1265
         },
         "passed_test_lines_before": 0,
         "passed_test_lines_kept": 0,
-        "passthrough": false,
+        "passthrough": true,
         "pricing_lines_before": 0,
         "pricing_lines_kept": 0,
         "query": "",
-        "ratio": 0.798199615451844,
-        "recovery_handle": "ccr_a078119f3d57d32a65706a9bb3f8e5a4",
+        "ratio": 0,
         "script": "scripts/run_caveman.sh",
         "token_count_basis": "o200k_base",
-        "tokens_after": 2309,
-        "tokens_before": 11442,
-        "unchanged": false
+        "tokens_after": 10408,
+        "tokens_before": 10408,
+        "unchanged": true
       }
     },
     "caveman/issues_query": {
       "path": "results/caveman/issues_query.txt",
-      "bytes": 7903,
-      "chars": 7897,
-      "lines": 1,
-      "unchanged": false,
+      "bytes": 34259,
+      "chars": 34259,
+      "lines": 1265,
+      "unchanged": true,
       "issue_42_title_survived": true,
-      "issue_titles_kept": 14,
+      "issue_titles_kept": 60,
       "freeship_lines_kept": 0,
       "pricing_lines_kept": 0,
       "elided_line_counts": [],
       "elided_lines": 0,
-      "issue_records_kept": 14,
-      "issue_records_elided": 46,
-      "elision_groups": 5,
+      "issue_records_kept": 60,
+      "issue_records_elided": 0,
+      "elision_groups": 0,
       "tool_metadata": {
         "basis": "inferred",
         "content_type": "json",
@@ -807,14 +932,14 @@
         "freeship_lines_kept": 0,
         "input": "data/issues.json",
         "input_dimensions": {
-          "bytes": 38361,
-          "characters": 38361,
+          "bytes": 34259,
+          "characters": 34259,
           "lines": 1265
         },
         "issue_42_kept": true,
         "issues_before": 60,
-        "issues_elided": 46,
-        "issues_kept": 14,
+        "issues_elided": 0,
+        "issues_kept": 60,
         "kept_issue_numbers": [
           1,
           2,
@@ -823,35 +948,78 @@
           5,
           6,
           7,
+          8,
+          9,
           10,
           11,
+          12,
+          13,
+          14,
+          15,
+          16,
           17,
+          18,
+          19,
+          20,
+          21,
           22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
           42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
           59,
           60
         ],
         "lines_elided_in_markers": 0,
-        "lossless_to_model": false,
-        "method": "elision",
         "output_dimensions": {
-          "bytes": 7903,
-          "characters": 7897,
-          "lines": 1
+          "bytes": 34259,
+          "characters": 34259,
+          "lines": 1265
         },
         "passed_test_lines_before": 0,
         "passed_test_lines_kept": 0,
-        "passthrough": false,
+        "passthrough": true,
         "pricing_lines_before": 0,
         "pricing_lines_kept": 0,
         "query": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
-        "ratio": 0.798199615451844,
-        "recovery_handle": "ccr_a078119f3d57d32a65706a9bb3f8e5a4",
+        "ratio": 0,
         "script": "scripts/run_caveman.sh",
         "token_count_basis": "o200k_base",
-        "tokens_after": 2309,
-        "tokens_before": 11442,
-        "unchanged": false
+        "tokens_after": 10408,
+        "tokens_before": 10408,
+        "unchanged": true
       }
     },
     "caveman/app_no_query": {
@@ -1048,15 +1216,15 @@
   "rtk_reported_tokens": [
     {
       "rtk_cmd": "rtk pytest -v",
-      "input_tokens": 264,
+      "input_tokens": 257,
       "output_tokens": 70,
-      "saved_tokens": 194
+      "saved_tokens": 187
     },
     {
       "rtk_cmd": "rtk json",
-      "input_tokens": 9591,
-      "output_tokens": 115,
-      "saved_tokens": 9476
+      "input_tokens": 8565,
+      "output_tokens": 123,
+      "saved_tokens": 8442
     }
   ],
   "codegraph_metadata": {
@@ -1065,7 +1233,7 @@
       "package": "@colbymchenry/codegraph@1.6.2",
       "user_question": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
       "explore_query": "why can the cart total become negative",
-      "scope": "Repository root, with codegraph.json excluding data/, scripts/, tools/, and results/. Shop source and tests are included.",
+      "scope": "Repository root, with codegraph.json excluding data/, scripts/, tools/, results/, and docs/. Shop source and tests are included.",
       "indexed_files": [
         "shop/__init__.py",
         "shop/cart.py",
@@ -1078,8 +1246,8 @@
         "tests/test_models.py",
         "tests/test_shipping_tax.py"
       ],
-      "indexed_nodes": 134,
-      "indexed_edges": 345,
+      "indexed_nodes": 126,
+      "indexed_edges": 333,
       "commands": {
         "version": {
           "command": [
@@ -1109,8 +1277,8 @@
           "stdout": "results/codegraph/init.txt",
           "stderr": "results/codegraph/init.stderr.txt",
           "exit_code": 0,
-          "stdout_bytes": 273,
-          "stdout_characters": 253,
+          "stdout_bytes": 246,
+          "stdout_characters": 226,
           "stdout_lines": 15,
           "tokens": null,
           "tokens_note": "The CLI does not report a token count for this output."
@@ -1165,7 +1333,7 @@
           "stdout_lines": 306,
           "tokens": null,
           "tokens_note": "The CLI does not report a token count for this output.",
-          "symbols_returned": 25,
+          "symbols_returned": 26,
           "files_returned": 4
         }
       }
@@ -1203,5 +1371,93 @@
     "2026-10-11T09:01:30Z level=INFO service=pricing msg=\"discount larger than subtotal, amount went below zero, no lower bound applied\" order=5088",
     "2026-10-11T09:02:55Z level=INFO service=pricing msg=\"discount larger than subtotal, amount went below zero, no lower bound applied\" order=5173",
     "2026-10-11T09:04:03Z level=INFO service=pricing msg=\"discount larger than subtotal, amount went below zero, no lower bound applied\" order=5241"
-  ]
+  ],
+  "expectations": {
+    "E1": {
+      "holds": true,
+      "normalized_root": "/work/context-compression-demo",
+      "path_leaks": [],
+      "evidence": [
+        "pytest/raw.txt"
+      ]
+    },
+    "E2": {
+      "holds": true,
+      "characters": 6426,
+      "byte_identical": true,
+      "evidence": [
+        "headroom/pytest.metadata.json",
+        "headroom/pytest.txt"
+      ]
+    },
+    "E3": {
+      "holds": false,
+      "auto_detected_type": "text",
+      "auto_unchanged": true,
+      "terminal": {
+        "one_fold_marker": false,
+        "passed_lines_before": 66,
+        "passed_lines_kept": 59,
+        "fold_markers": 7,
+        "failure_records_kept": true,
+        "warning_records_present": 0,
+        "warning_records_kept": true,
+        "summary_kept": true
+      },
+      "evidence": [
+        "caveman/pytest_auto.metadata.json",
+        "caveman/pytest_terminal.txt"
+      ]
+    },
+    "E4": {
+      "holds": true,
+      "observed": {
+        "smartcrusher_no_query": {
+          "strategy": "skip:unique_entities_no_signal(60->60)",
+          "issues_kept": 60,
+          "issue_42_kept": true,
+          "records_equal_to_input": true
+        },
+        "smartcrusher_query": {
+          "strategy": "skip:unique_entities_no_signal(60->60)",
+          "issues_kept": 60,
+          "issue_42_kept": true,
+          "records_equal_to_input": true
+        }
+      },
+      "evidence": [
+        "headroom/smartcrusher_no_query.metadata.json",
+        "headroom/smartcrusher_query.metadata.json"
+      ]
+    },
+    "E5": {
+      "holds": false,
+      "checks": {
+        "rtk_pytest_failure_assertion_line_and_recall": true,
+        "rtk_json_first_item_plus_59_without_42": true,
+        "headroom_lossless_60_issue_table_mixed_route": true,
+        "caveman_json_keeps_42_both_queries": true,
+        "caveman_json_writes_invariant_markers_both_queries": false,
+        "caveman_log_no_query_folds_3_with_freeship_invariant": true,
+        "caveman_log_query_keeps_3_verbatim": true,
+        "caveman_synonyms_keeps_3_freeship_but_1_pricing": true,
+        "codemode_exact_relevant_title": true,
+        "codegraph_symbols_explore_and_correct_bug_line": true
+      },
+      "failure_assertion_location": "tests/test_cart.py:52",
+      "bug_location": "shop/coupons.py:52",
+      "evidence": [
+        "rtk/pytest.txt",
+        "rtk/issues.txt",
+        "headroom/issues.txt",
+        "caveman/issues_no_query.txt",
+        "caveman/issues_query.txt",
+        "caveman/app_no_query.txt",
+        "caveman/app_query.txt",
+        "caveman/app_synonyms_query.txt",
+        "codemode/issues.txt",
+        "codegraph/apply_coupon.txt"
+      ]
+    }
+  }
 }

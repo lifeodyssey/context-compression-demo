@@ -9,52 +9,25 @@
     "protect_recent": 0
   },
   "input_dimensions": {
-    "bytes": 8087,
-    "characters": 8087,
-    "lines": 109
+    "bytes": 6426,
+    "characters": 6426,
+    "lines": 89
   },
   "output_dimensions": {
-    "bytes": 8087,
-    "characters": 8087,
-    "lines": 109
+    "bytes": 6426,
+    "characters": 6426,
+    "lines": 89
   },
   "unchanged": true,
-  "tokens_before": 2271,
-  "tokens_after": 2271,
+  "tokens_before": 1779,
+  "tokens_after": 1779,
   "tokens_saved": 0,
   "token_count_basis": "Headroom local estimator; complete three-message conversation, not provider usage",
   "transforms_applied": [
-    "router:protected:user_message"
+    "router:protected:user_message",
+    "router:protected:error_output"
   ],
-  "routing_events": [
-    {
-      "event": "content_router_input",
-      "chars": 8087,
-      "bytes": 8087,
-      "detected_content_type": "text",
-      "detection_confidence": 0.5,
-      "selected_strategy": "text",
-      "selection_reason": "content_detection"
-    },
-    {
-      "event": "content_router_strategy_result",
-      "requested_strategy": "text",
-      "actual_strategy": "text",
-      "strategy_chain": [
-        "text"
-      ],
-      "compressor": "KompressCompressor",
-      "reason": "text_uses_kompress",
-      "tokens_saved": 0,
-      "compression_ratio": 1.0
-    },
-    {
-      "event": "content_router_output",
-      "selected_strategy": "text",
-      "tokens_saved": 0,
-      "compression_ratio": 1.0
-    }
-  ],
+  "routing_events": [],
   "diagnostics": [
     {
       "message_index": 0,
@@ -73,8 +46,8 @@
     {
       "message_index": 2,
       "role": "user",
-      "tokens_before": 2230,
-      "tokens_after": 2230,
+      "tokens_before": 1738,
+      "tokens_after": 1738,
       "action": "protected:content_blocks_unchanged"
     }
   ]

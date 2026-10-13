@@ -6,29 +6,29 @@
   "freeship_lines_kept": 0,
   "input": "results/pytest/raw.txt",
   "input_dimensions": {
-    "bytes": 8087,
-    "characters": 8087,
-    "lines": 109
+    "bytes": 6426,
+    "characters": 6426,
+    "lines": 89
   },
-  "lines_elided_in_markers": 20,
+  "lines_elided_in_markers": 11,
   "lossless_to_model": false,
   "method": "terminal",
   "output_dimensions": {
-    "bytes": 7194,
-    "characters": 7146,
-    "lines": 101
+    "bytes": 6093,
+    "characters": 6065,
+    "lines": 85
   },
-  "passed_test_lines_before": 86,
-  "passed_test_lines_kept": 70,
+  "passed_test_lines_before": 66,
+  "passed_test_lines_kept": 59,
   "passthrough": false,
   "pricing_lines_before": 0,
   "pricing_lines_kept": 0,
   "query": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
-  "ratio": 0.12062780269058296,
-  "recovery_handle": "ccr_fcbe3842f792468f9d8b133d2d2fb495",
+  "ratio": 0.05983889528193326,
+  "recovery_handle": "ccr_38684f25d7f231b958bd5adc153f740d",
   "script": "scripts/run_caveman.sh",
   "token_count_basis": "o200k_base",
-  "tokens_after": 1961,
-  "tokens_before": 2230,
+  "tokens_after": 1634,
+  "tokens_before": 1738,
   "unchanged": false
 }

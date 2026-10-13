@@ -9,19 +9,19 @@
     "protect_recent": 0
   },
   "input_dimensions": {
-    "bytes": 38361,
-    "characters": 38361,
+    "bytes": 34259,
+    "characters": 34259,
     "lines": 1265
   },
   "output_dimensions": {
-    "bytes": 22610,
-    "characters": 22610,
+    "bytes": 18530,
+    "characters": 18530,
     "lines": 61
   },
   "unchanged": false,
-  "tokens_before": 11484,
-  "tokens_after": 6563,
-  "tokens_saved": 4921,
+  "tokens_before": 10450,
+  "tokens_after": 5536,
+  "tokens_saved": 4914,
   "token_count_basis": "Headroom local estimator; complete three-message conversation, not provider usage",
   "transforms_applied": [
     "router:protected:user_message",
@@ -30,8 +30,8 @@
   "routing_events": [
     {
       "event": "content_router_input",
-      "chars": 38361,
-      "bytes": 38361,
+      "chars": 34259,
+      "bytes": 34259,
       "detected_content_type": "json_array",
       "detection_confidence": 1.0,
       "selected_strategy": "mixed",
@@ -49,14 +49,14 @@
       ],
       "compressor": "SmartCrusher",
       "reason": "smart_crusher",
-      "tokens_saved": 6159,
-      "compression_ratio": 0.48623623623623624
+      "tokens_saved": 5892,
+      "compression_ratio": 0.44965439940220436
     },
     {
       "event": "content_router_output",
       "selected_strategy": "mixed",
-      "tokens_saved": 6159,
-      "compression_ratio": 0.48623623623623624
+      "tokens_saved": 5892,
+      "compression_ratio": 0.44965439940220436
     }
   ],
   "diagnostics": [
@@ -77,8 +77,8 @@
     {
       "message_index": 2,
       "role": "user",
-      "tokens_before": 11442,
-      "tokens_after": 6521,
+      "tokens_before": 10408,
+      "tokens_after": 5494,
       "action": "compressed:content_blocks"
     }
   ],

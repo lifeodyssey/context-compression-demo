@@ -1,1 +1,1 @@
-type=json tokens 11442 -> 2309 bytes 38361 -> 7903 passthrough=false
+type=json tokens 10408 -> 10408 bytes 34259 -> 34259 passthrough=true

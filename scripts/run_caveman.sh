@@ -29,6 +29,7 @@ trap cleanup EXIT
 export HOME="$task_home" GOPATH="$task_home/go" GOCACHE="$task_home/go-build"
 export GOMODCACHE="$task_home/go/pkg/mod" GOENV=off GOPROXY=off GOSUMDB=off
 export GOTOOLCHAIN=local GOTELEMETRY=off
+export HEADROOM_TELEMETRY=0 CODEGRAPH_TELEMETRY=0 DO_NOT_TRACK=1 RTK_TELEMETRY_DISABLED=1 PYTHONDONTWRITEBYTECODE=1
 export XDG_CONFIG_HOME="$task_home/.config" XDG_CACHE_HOME="$task_home/.cache"
 export XDG_DATA_HOME="$task_home/.local/share" TMPDIR="$task_home/tmp"
 mkdir -p "$GOPATH/pkg" "$TMPDIR" results/caveman

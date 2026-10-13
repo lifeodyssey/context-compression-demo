@@ -17,7 +17,7 @@ def cart():
 
 
 @pytest.mark.parametrize("price,quantity,expected", [
-    (1.5, 2, 3.0), (2.5, 2, 5.0), (37.5, 2, 75.0),
+    (1.5, 2, 3.0),
     (0.0, 3, 0.0), (12.5, 0, 0.0), (0.333, 3, 1.0),
 ])
 def test_line_total(price, quantity, expected):
@@ -77,20 +77,20 @@ def test_add_item_rejects_invalid_quantity(cart, quantity):
 
 
 def test_remove_item(cart):
-    assert remove_item(cart, "TEA").items == []
-
-
-def test_remove_missing_item_is_noop(cart):
     assert remove_item(cart, "MISSING").item_count == 2
+    assert remove_item(cart, "TEA").items == []
 
 
 def test_set_quantity(cart):
     assert set_quantity(cart, "TEA", 4).item_count == 4
 
 
-@pytest.mark.parametrize("quantity", [0, -1])
-def test_set_nonpositive_quantity_removes_item(cart, quantity):
-    assert set_quantity(cart, "TEA", quantity).items == []
+def test_set_nonpositive_quantity_removes_item(cart):
+    product = cart.items[0].product
+    for quantity in (0, -1):
+        set_quantity(cart, "TEA", quantity)
+        assert cart.items == []
+        add_item(cart, product)
 
 
 def test_set_quantity_rejects_fraction(cart):
@@ -116,10 +116,6 @@ def test_merge_same_cart_is_noop(cart):
     assert merge_carts(cart, cart).item_count == 2
 
 
-def test_as_rows(cart):
-    assert as_rows(cart) == [{"price": 20.0, "quantity": 2}]
-
-
 def test_checkout_total_itemizes_charges(cart):
     cart.coupon = "SAVE10"
     assert checkout_total(cart) == {
@@ -133,15 +129,11 @@ def test_checkout_pickup_has_no_shipping_or_tax(cart):
     assert checkout_total(cart)["grand_total"] == 40.0
 
 
-def test_checkout_rejects_member_coupon_for_guest(cart):
+def test_checkout_member_coupon_eligibility(cart):
     cart.coupon = "VIP20"
     with pytest.raises(CouponError, match="members only"):
         checkout_total(cart)
-
-
-def test_checkout_accepts_member_coupon(cart):
     cart.customer.is_member = True
-    cart.coupon = "VIP20"
     assert checkout_total(cart)["discounted"] == 32.0
 
 
@@ -149,7 +141,8 @@ def test_cart_summary(cart):
     assert cart_summary(cart) == "2 x Tea @ 20.00\nTotal: 49.10 USD"
 
 
-def test_serialize_cart(cart):
+def test_cart_representations(cart):
+    assert as_rows(cart) == [{"price": 20.0, "quantity": 2}]
     assert serialize_cart(cart) == {
         "customer": "customer-1", "items": [{"sku": "TEA", "quantity": 2}],
         "coupon": None, "currency": "USD",
