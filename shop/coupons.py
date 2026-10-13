@@ -46,10 +46,10 @@ def apply_coupon(total: float, coupon: Optional[Coupon]) -> float:
     if coupon.kind == "percent":
         return total * (1 - coupon.value / 100)
     if coupon.kind == "fixed":
-        return total - coupon.value
+        return max(total - coupon.value, 0.0)
     if coupon.kind == "shipping":
         # free shipping is modelled as a flat discount
-        return total - coupon.value
+        return max(total - coupon.value, 0.0)
     raise CouponError(f"unknown coupon kind: {coupon.kind}")
 
 
