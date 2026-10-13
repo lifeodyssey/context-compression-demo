@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.codegraph/
+.codegraph-demo-*/
+tools/cavrun/cavrun
+*.pyc

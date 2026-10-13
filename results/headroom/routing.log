@@ -1,0 +1,26 @@
+headroom.transforms.pipeline INFO Pipeline using ContentRouter for intelligent content-aware compression
+headroom.compress DEBUG Headroom compression pipeline initialized
+headroom.transforms.pipeline DEBUG Pipeline starting: 3 messages, 2271 tokens, model=claude-sonnet-4-5-20250929
+headroom.transforms.content_router WARNING Native content detection requires ONNX Runtime 1.24+; using pure-Python detection for this process.
+headroom.transforms.content_router DEBUG event=content_router_input {"event": "content_router_input", "chars": 8087, "bytes": 8087, "detected_content_type": "text", "detection_confidence": 0.5, "selected_strategy": "text", "selection_reason": "content_detection"}
+headroom.transforms.content_router DEBUG CompressionObserver raised (non-fatal): 'BeaconCompressionObserver' object has no attribute 'record_kompress_size_gate'
+headroom.transforms.content_router DEBUG event=content_router_strategy_result {"event": "content_router_strategy_result", "requested_strategy": "text", "actual_strategy": "text", "strategy_chain": ["text"], "compressor": "KompressCompressor", "reason": "text_uses_kompress", "tokens_saved": 0, "compression_ratio": 1.0}
+headroom.transforms.content_router DEBUG event=content_router_output {"event": "content_router_output", "selected_strategy": "text", "tokens_saved": 0, "compression_ratio": 1.0}
+headroom.transforms.content_router INFO content_router: 3 msgs — 1 skipped (user), 1 unchanged (ratio>=1.00), 2 content-block msgs, 1 cache misses, cache[0 results, 1 skips, 750ns avg]
+headroom.transforms.content_router INFO [router] route_counts={'user_msg': 1, 'ratio_too_high': 1, 'content_blocks': 2, 'cache_miss': 1} compressed=0 frozen=0 msgs=3
+headroom.transforms.pipeline INFO Transform content_router: 2413 -> 2413 tokens (saved 0) [17.9ms]
+headroom.transforms.pipeline DEBUG Pipeline complete: no token savings [_deep_copy=0ms _initial_token_count=8ms content_router=18ms compressor:text=11ms _final_token_count=0ms pipeline_total=18ms]
+headroom.transforms.pipeline DEBUG Pipeline starting: 3 messages, 11484 tokens, model=claude-sonnet-4-5-20250929
+headroom.transforms.content_router DEBUG event=content_router_input {"event": "content_router_input", "chars": 38361, "bytes": 38361, "detected_content_type": "json_array", "detection_confidence": 1.0, "selected_strategy": "mixed", "selection_reason": "mixed_content"}
+headroom.transforms.content_router DEBUG event=content_router_mixed_sections {"event": "content_router_mixed_sections"}
+headroom.smart_crusher DEBUG smart_crusher.crush emitted strategy=lossless:table(60->len=22610) input_bytes=38360 output_bytes=23315 elapsed_ns=7724875 was_modified=true
+headroom.transforms.content_router DEBUG event=content_router_strategy_result {"event": "content_router_strategy_result", "requested_strategy": "smart_crusher", "actual_strategy": "smart_crusher", "strategy_chain": ["smart_crusher"], "compressor": "SmartCrusher", "reason": "smart_crusher", "tokens_saved": 6159, "compression_ratio": 0.48623623623623624}
+headroom.transforms.content_router DEBUG event=content_router_output {"event": "content_router_output", "selected_strategy": "mixed", "tokens_saved": 6159, "compression_ratio": 0.48623623623623624}
+headroom.transforms.content_router INFO content_router: 3 msgs — 1 compressed (tool:mixed:0.49), 1 skipped (user), 2 content-block msgs, 1 cache misses, cache[1 results, 1 skips, 729ns avg]
+headroom.transforms.content_router INFO [router] route_counts={'user_msg': 1, 'content_blocks': 2, 'cache_miss': 1} compressed=1 frozen=0 msgs=3
+headroom.transforms.pipeline INFO Transform content_router: 13327 -> 6601 tokens (saved 6726) [35.5ms]
+headroom.transforms.pipeline INFO Pipeline complete: 11484 -> 6563 tokens (saved 4921, 42.9% reduction) [_deep_copy=0ms _initial_token_count=2ms content_router=36ms compressor:mixed=31ms _final_token_count=0ms pipeline_total=36ms]
+headroom.smart_crusher DEBUG smart_crusher.crush emitted strategy=smart_sample(60->15) input_bytes=38361 output_bytes=7701 elapsed_ns=7147833 was_modified=true
+headroom.smart_crusher DEBUG smart_crusher.crush emitted strategy=smart_sample(60->15) input_bytes=38361 output_bytes=7615 elapsed_ns=11803958 was_modified=true
+headroom.cache.compression_store DEBUG Duplicate store for hash=0979b58f502a, updating entry
+headroom.cache.compression_store DEBUG Rebuilt eviction heaps: 1 entries

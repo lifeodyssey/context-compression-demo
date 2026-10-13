@@ -1,0 +1,6 @@
+2026-10-11T09:00:01Z level=INFO service=api method=GET path=/cart status=200 latency_ms=70
+2026-10-11T09:00:02Z level=INFO service=api method=GET path=/products status=200 latency_ms=85
+… 296 lines elided (caveman): service: api×219 checkout×77; method: GET×219 absent×77; status: 200×219 absent×77; coupon: WELCOME5×42 SAVE10×32 FREESHIP×3 absent×219; +3 omitted …
+2026-10-11T09:04:59Z level=INFO service=api method=GET path=/search status=200 latency_ms=24
+2026-10-11T09:05:00Z level=INFO service=checkout msg="coupon applied" coupon=SAVE10 subtotal=45.18 total=40.66 order=5299
+… caveman: elided lines resemble shown lines and match the stated invariants — answer from this view; if you truly cannot, one broad caveman_retrieve …

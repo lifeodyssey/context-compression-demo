@@ -1,0 +1,34 @@
+{
+  "basis": "inferred",
+  "content_type": "log",
+  "forced_type": "",
+  "freeship_lines_before": 3,
+  "freeship_lines_kept": 0,
+  "input": "data/app.log",
+  "input_dimensions": {
+    "bytes": 30553,
+    "characters": 30553,
+    "lines": 300
+  },
+  "lines_elided_in_markers": 296,
+  "lossless_to_model": false,
+  "method": "log",
+  "output_dimensions": {
+    "bytes": 753,
+    "characters": 733,
+    "lines": 6
+  },
+  "passed_test_lines_before": 0,
+  "passed_test_lines_kept": 0,
+  "passthrough": false,
+  "pricing_lines_before": 0,
+  "pricing_lines_kept": 0,
+  "query": "",
+  "ratio": 0.9778498609823911,
+  "recovery_handle": "ccr_ee1e77f86eac0ed1b9bd0e0a2d293f69",
+  "script": "scripts/run_caveman.sh",
+  "token_count_basis": "o200k_base",
+  "tokens_after": 239,
+  "tokens_before": 10790,
+  "unchanged": false
+}

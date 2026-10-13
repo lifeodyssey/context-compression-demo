@@ -1,0 +1,101 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /private/tmp/hrenv/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /Users/lumimamini/Documents/blog/context-compression-demo
+configfile: pytest.ini
+testpaths: tests
+collecting ... collected 87 items
+… 1 lines elided (caveman) …
+tests/test_cart.py::test_line_total[1.5-2-3.0] PASSED                    [  1%]
+… 5 lines elided (caveman) …
+tests/test_cart.py::test_line_total_rejects_invalid_inputs[-1-1] PASSED  [  8%]
+… 2 lines elided (caveman) …
+tests/test_cart.py::test_subtotal_rounds_merchandise_lines PASSED        [ 11%]
+tests/test_cart.py::test_empty_cart_total PASSED                         [ 12%]
+tests/test_cart.py::test_cart_total_without_coupon PASSED                [ 13%]
+tests/test_cart.py::test_cart_total_with_save10 PASSED                   [ 14%]
+tests/test_cart.py::test_freeship_never_negative FAILED                  [ 16%]
+tests/test_cart.py::test_created_at_is_recent PASSED                     [ 17%]
+tests/test_cart.py::test_add_item_merges_existing_sku PASSED             [ 18%]
+tests/test_cart.py::test_add_item_appends_new_product PASSED             [ 19%]
+tests/test_cart.py::test_add_item_rejects_invalid_quantity[0] PASSED     [ 20%]
+… 2 lines elided (caveman) …
+tests/test_cart.py::test_remove_item PASSED                              [ 24%]
+tests/test_cart.py::test_remove_missing_item_is_noop PASSED              [ 25%]
+tests/test_cart.py::test_set_quantity PASSED                             [ 26%]
+tests/test_cart.py::test_set_nonpositive_quantity_removes_item[0] PASSED [ 27%]
+… 1 lines elided (caveman) …
+tests/test_cart.py::test_set_quantity_rejects_fraction PASSED            [ 29%]
+tests/test_cart.py::test_merge_carts_prefers_member_coupon PASSED        [ 31%]
+tests/test_cart.py::test_merge_carts_inherits_guest_coupon PASSED        [ 32%]
+tests/test_cart.py::test_merge_same_cart_is_noop PASSED                  [ 33%]
+tests/test_cart.py::test_as_rows PASSED                                  [ 34%]
+tests/test_cart.py::test_checkout_total_itemizes_charges PASSED          [ 35%]
+tests/test_cart.py::test_checkout_pickup_has_no_shipping_or_tax PASSED   [ 36%]
+tests/test_cart.py::test_checkout_rejects_member_coupon_for_guest PASSED [ 37%]
+tests/test_cart.py::test_checkout_accepts_member_coupon PASSED           [ 39%]
+tests/test_cart.py::test_cart_summary PASSED                             [ 40%]
+tests/test_cart.py::test_serialize_cart PASSED                           [ 41%]
+tests/test_coupons.py::test_find_coupon_normalizes_code[SAVE10] PASSED   [ 42%]
+… 2 lines elided (caveman) …
+tests/test_coupons.py::test_find_coupon_without_match[None] PASSED       [ 45%]
+… 1 lines elided (caveman) …
+tests/test_coupons.py::test_find_coupon_without_match[MISSING] PASSED    [ 48%]
+tests/test_coupons.py::test_apply_coupon[None-40] PASSED                 [ 49%]
+tests/test_coupons.py::test_apply_coupon[SAVE10-36] PASSED               [ 50%]
+tests/test_coupons.py::test_apply_coupon[WELCOME5-35] PASSED             [ 51%]
+tests/test_coupons.py::test_apply_coupon_rejects_unknown_kind PASSED     [ 52%]
+tests/test_coupons.py::test_validate_coupon_at_minimum PASSED            [ 54%]
+tests/test_coupons.py::test_validate_coupon_below_minimum PASSED         [ 55%]
+tests/test_coupons.py::test_validate_coupon_expired PASSED               [ 56%]
+tests/test_coupons.py::test_validate_coupon_on_expiration_date PASSED    [ 57%]
+tests/test_coupons.py::test_describe_coupon[SAVE10-10% off] PASSED       [ 58%]
+tests/test_coupons.py::test_describe_coupon[WELCOME5-$5.00 off orders over $20.00] PASSED [ 59%]
+tests/test_coupons.py::test_describe_coupon[FREESHIP-free shipping] PASSED [ 60%]
+tests/test_coupons.py::test_shipping_coupon_is_stackable PASSED          [ 62%]
+tests/test_coupons.py::test_two_merchandise_coupons_are_not_stackable PASSED [ 63%]
+tests/test_models.py::test_product_defaults PASSED                       [ 64%]
+tests/test_models.py::test_product_rejects_invalid_values[-3-0] PASSED   [ 65%]
+tests/test_models.py::test_product_rejects_invalid_values[TEA--1-0] PASSED [ 66%]
+… 1 lines elided (caveman) …
+tests/test_models.py::test_cart_item_exposes_price_and_total_weight PASSED [ 68%]
+tests/test_models.py::test_cart_item_rejects_invalid_quantity[0] PASSED  [ 70%]
+… 2 lines elided (caveman) …
+tests/test_models.py::test_address_normalizes_destination PASSED         [ 73%]
+tests/test_models.py::test_customer_tags_are_independent PASSED          [ 74%]
+tests/test_models.py::test_cart_item_lists_are_independent PASSED        [ 75%]
+tests/test_shipping_tax.py::test_total_weight PASSED                     [ 77%]
+tests/test_shipping_tax.py::test_shipping_cost_by_destination[US-6.2] PASSED [ 78%]
+tests/test_shipping_tax.py::test_shipping_cost_by_destination[CA-10.8] PASSED [ 79%]
+tests/test_shipping_tax.py::test_shipping_cost_by_destination[JP-14.5] PASSED [ 80%]
+tests/test_shipping_tax.py::test_shipping_cost_by_destination[DE-18] PASSED [ 81%]
+tests/test_shipping_tax.py::test_free_domestic_shipping_at_threshold PASSED [ 82%]
+tests/test_shipping_tax.py::test_international_shipping_has_no_free_threshold PASSED [ 83%]
+tests/test_shipping_tax.py::test_empty_cart_has_no_shipping PASSED       [ 85%]
+tests/test_shipping_tax.py::test_delivery_days[US-expected0] PASSED      [ 86%]
+tests/test_shipping_tax.py::test_delivery_days[CA-expected1] PASSED      [ 87%]
+tests/test_shipping_tax.py::test_delivery_days[JP-expected2] PASSED      [ 88%]
+tests/test_shipping_tax.py::test_delivery_days[DE-expected3] PASSED      [ 89%]
+tests/test_shipping_tax.py::test_tax_rate[US-CA-0.0725] PASSED           [ 90%]
+tests/test_shipping_tax.py::test_tax_rate[US-NY-0.04] PASSED             [ 91%]
+tests/test_shipping_tax.py::test_tax_rate[US-TX-0.0625] PASSED           [ 93%]
+tests/test_shipping_tax.py::test_tax_rate[CA-ON-0.05] PASSED             [ 94%]
+tests/test_shipping_tax.py::test_tax_rate[JP--0.1] PASSED                [ 95%]
+tests/test_shipping_tax.py::test_tax_rate[DE--0] PASSED                  [ 96%]
+tests/test_shipping_tax.py::test_taxable_amount_excludes_exempt_products PASSED [ 97%]
+tests/test_shipping_tax.py::test_tax_amount_rounds_to_cents PASSED       [ 98%]
+tests/test_shipping_tax.py::test_empty_cart_has_no_tax PASSED            [100%]
+… 1 lines elided (caveman) …
+=================================== FAILURES ===================================
+_________________________ test_freeship_never_negative _________________________
+… 1 lines elided (caveman) …
+    def test_freeship_never_negative():
+        items = [{"price": 3.0, "quantity": 1}]
+>       assert cart_total(items, "FREESHIP") == 0.0
+E       AssertionError: assert -2.0 == 0.0
+E        +  where -2.0 = cart_total([{'price': 3.0, 'quantity': 1}], 'FREESHIP')
+… 1 lines elided (caveman) …
+tests/test_cart.py:52: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cart.py::test_freeship_never_negative - AssertionError: ass...
+========================= 1 failed, 86 passed in 0.04s =========================

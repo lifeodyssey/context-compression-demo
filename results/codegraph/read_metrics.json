@@ -1,0 +1,23 @@
+{
+  "script": "scripts/measure_read.py",
+  "format": "Each source line prefixed with its right-aligned width-6 line number and a TAB; source line endings preserved; no wrapper text.",
+  "files": [
+    {
+      "file": "shop/cart.py",
+      "lines": 111,
+      "raw_bytes": 3817,
+      "line_numbered_bytes": 4594,
+      "line_numbered_output": "results/codegraph/read_cart.py.txt"
+    },
+    {
+      "file": "shop/coupons.py",
+      "lines": 67,
+      "raw_bytes": 2066,
+      "line_numbered_bytes": 2535,
+      "line_numbered_output": "results/codegraph/read_coupons.py.txt"
+    }
+  ],
+  "total_raw_bytes": 5883,
+  "total_line_numbered_bytes": 7129,
+  "total_lines": 178
+}

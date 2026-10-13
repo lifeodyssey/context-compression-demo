@@ -1,0 +1,13 @@
+{
+  "command": "pytest -v",
+  "exit_code": 1,
+  "failed": [
+    "tests/test_cart.py::test_freeship_never_negative"
+  ],
+  "passed": 86,
+  "collected": 87,
+  "lines": 109,
+  "bytes": 8087,
+  "chars": 8087,
+  "tokens": null
+}

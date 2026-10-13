@@ -1,0 +1,34 @@
+{
+  "basis": "inferred",
+  "content_type": "terminal",
+  "forced_type": "terminal",
+  "freeship_lines_before": 0,
+  "freeship_lines_kept": 0,
+  "input": "results/pytest/raw.txt",
+  "input_dimensions": {
+    "bytes": 8087,
+    "characters": 8087,
+    "lines": 109
+  },
+  "lines_elided_in_markers": 20,
+  "lossless_to_model": false,
+  "method": "terminal",
+  "output_dimensions": {
+    "bytes": 7194,
+    "characters": 7146,
+    "lines": 101
+  },
+  "passed_test_lines_before": 86,
+  "passed_test_lines_kept": 70,
+  "passthrough": false,
+  "pricing_lines_before": 0,
+  "pricing_lines_kept": 0,
+  "query": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
+  "ratio": 0.12062780269058296,
+  "recovery_handle": "ccr_fcbe3842f792468f9d8b133d2d2fb495",
+  "script": "scripts/run_caveman.sh",
+  "token_count_basis": "o200k_base",
+  "tokens_after": 1961,
+  "tokens_before": 2230,
+  "unchanged": false
+}

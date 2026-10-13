@@ -1,0 +1,15 @@
+┌  Initializing CodeGraph
+│
+◆  Initialized in /Users/lumimamini/Documents/blog/context-compression-demo
+│
+Scanning files...
+Parsing code...
+Resolving refs...
+Linking dynamic dispatch...
+│
+◆  Indexed 10 files
+│
+●  134 nodes, 345 edges in 1.3s
+│
+└  Done
+

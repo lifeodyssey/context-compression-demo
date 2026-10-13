@@ -1,0 +1,111 @@
+     1	import datetime
+     2	from typing import Optional
+     3	
+     4	from .coupons import apply_coupon, find_coupon, validate_coupon
+     5	from .models import Cart, CartItem, Product
+     6	from .shipping import shipping_cost
+     7	from .tax import tax_amount
+     8	
+     9	
+    10	def line_total(price: float, quantity: int) -> float:
+    11	    """Round each merchandise line before adding it to the subtotal."""
+    12	    if price < 0 or not isinstance(quantity, int) or quantity < 0:
+    13	        raise ValueError("price and quantity must be nonnegative; quantity must be an integer")
+    14	    return round(price * quantity, 2)
+    15	
+    16	
+    17	def subtotal(items: list[dict]) -> float:
+    18	    return round(sum(line_total(i["price"], i["quantity"]) for i in items), 2)
+    19	
+    20	
+    21	def cart_total(items: list[dict], coupon: Optional[str] = None) -> float:
+    22	    """Return merchandise total after one coupon, before shipping and tax."""
+    23	    total = subtotal(items)
+    24	    total = apply_coupon(total, find_coupon(coupon))
+    25	    return round(total, 2)
+    26	
+    27	
+    28	def add_item(cart: Cart, product: Product, quantity: int = 1) -> Cart:
+    29	    if not isinstance(quantity, int) or quantity < 1:
+    30	        raise ValueError("quantity must be a positive integer")
+    31	    for item in cart.items:
+    32	        if item.product.sku == product.sku:
+    33	            item.quantity += quantity
+    34	            return cart
+    35	    cart.items.append(CartItem(product, quantity))
+    36	    return cart
+    37	
+    38	
+    39	def remove_item(cart: Cart, sku: str) -> Cart:
+    40	    cart.items = [item for item in cart.items if item.product.sku != sku]
+    41	    return cart
+    42	
+    43	
+    44	def set_quantity(cart: Cart, sku: str, quantity: int) -> Cart:
+    45	    if not isinstance(quantity, int):
+    46	        raise ValueError("quantity must be an integer")
+    47	    if quantity <= 0:
+    48	        return remove_item(cart, sku)
+    49	    for item in cart.items:
+    50	        if item.product.sku == sku:
+    51	            item.quantity = quantity
+    52	    return cart
+    53	
+    54	
+    55	def merge_carts(guest: Cart, member: Cart) -> Cart:
+    56	    """Move guest quantities into a member cart, preferring its coupon."""
+    57	    if guest is member:
+    58	        return member
+    59	    for item in guest.items:
+    60	        add_item(member, item.product, item.quantity)
+    61	    member.coupon = member.coupon or guest.coupon
+    62	    return member
+    63	
+    64	
+    65	def as_rows(cart: Cart) -> list[dict]:
+    66	    return [{"price": item.price, "quantity": item.quantity} for item in cart.items]
+    67	
+    68	
+    69	def checkout_total(cart: Cart, today: Optional[datetime.date] = None) -> dict:
+    70	    """Validate coupon eligibility and itemize the checkout charges.
+    71	
+    72	    The demo charges destination tax on pre-discount taxable merchandise.
+    73	    Missing addresses represent pickup orders with no shipping or tax.
+    74	    """
+    75	    today = today or datetime.date.today()
+    76	    rows = as_rows(cart)
+    77	    sub = subtotal(rows)
+    78	    coupon = find_coupon(cart.coupon)
+    79	    if coupon:
+    80	        validate_coupon(coupon, sub, cart.customer.is_member, today)
+    81	    discounted = cart_total(rows, cart.coupon)
+    82	    address = cart.customer.address
+    83	    shipping = shipping_cost(cart.items, address, sub) if address else 0.0
+    84	    tax = tax_amount(cart.items, address) if address else 0.0
+    85	    return {
+    86	        "subtotal": round(sub, 2),
+    87	        "discounted": discounted,
+    88	        "shipping": shipping,
+    89	        "tax": tax,
+    90	        "grand_total": round(discounted + shipping + tax, 2),
+    91	    }
+    92	
+    93	
+    94	def cart_summary(cart: Cart) -> str:
+    95	    lines = [f"{item.quantity} x {item.product.name} @ {item.price:.2f}" for item in cart.items]
+    96	    totals = checkout_total(cart)
+    97	    lines.append(f"Total: {totals['grand_total']:.2f} {cart.currency}")
+    98	    return "\n".join(lines)
+    99	
+   100	
+   101	def serialize_cart(cart: Cart) -> dict:
+   102	    return {
+   103	        "customer": cart.customer.customer_id,
+   104	        "items": [{"sku": i.product.sku, "quantity": i.quantity} for i in cart.items],
+   105	        "coupon": cart.coupon,
+   106	        "currency": cart.currency,
+   107	    }
+   108	
+   109	
+   110	def created_at() -> datetime.datetime:
+   111	    return datetime.datetime.now(datetime.timezone.utc)

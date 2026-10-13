@@ -1,0 +1,23 @@
+[{
+    body: "Steps and context for issue 1. The order confirmation email contains a typo i..."
+    comments: 5
+    created_at: "2026-09-02T08:01:00Z"
+    id: 900001
+    labels:
+    [
+      {
+        name: "question"
+      },
+    ]
+    number: 1
+    state: "open"
+    title: "Typo in checkout email (1)"
+    updated_at: "2026-10-02T10:03:00Z"
+    user:
+    {
+      id: 1001
+      login: "kai"
+      site_admin: false
+      type: "User"
+    }
+  }, ... +59 more]

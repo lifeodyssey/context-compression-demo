@@ -1,0 +1,110 @@
+{
+  "script": "scripts/run_codegraph.sh",
+  "package": "@colbymchenry/codegraph@1.6.2",
+  "user_question": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
+  "explore_query": "why can the cart total become negative",
+  "scope": "Repository root, with codegraph.json excluding data/, scripts/, tools/, and results/. Shop source and tests are included.",
+  "indexed_files": [
+    "shop/__init__.py",
+    "shop/cart.py",
+    "shop/coupons.py",
+    "shop/models.py",
+    "shop/shipping.py",
+    "shop/tax.py",
+    "tests/test_cart.py",
+    "tests/test_coupons.py",
+    "tests/test_models.py",
+    "tests/test_shipping_tax.py"
+  ],
+  "indexed_nodes": 134,
+  "indexed_edges": 345,
+  "commands": {
+    "version": {
+      "command": [
+        "npx",
+        "-y",
+        "@colbymchenry/codegraph@1.6.2",
+        "--version"
+      ],
+      "stdout": "results/codegraph/version.txt",
+      "stderr": "results/codegraph/version.stderr.txt",
+      "exit_code": 0,
+      "stdout_bytes": 6,
+      "stdout_characters": 6,
+      "stdout_lines": 1,
+      "tokens": null,
+      "tokens_note": "The CLI does not report a token count for this output."
+    },
+    "init": {
+      "command": [
+        "npx",
+        "-y",
+        "@colbymchenry/codegraph@1.6.2",
+        "init",
+        "--yes",
+        "."
+      ],
+      "stdout": "results/codegraph/init.txt",
+      "stderr": "results/codegraph/init.stderr.txt",
+      "exit_code": 0,
+      "stdout_bytes": 273,
+      "stdout_characters": 253,
+      "stdout_lines": 15,
+      "tokens": null,
+      "tokens_note": "The CLI does not report a token count for this output."
+    },
+    "cart_total": {
+      "command": [
+        "npx",
+        "-y",
+        "@colbymchenry/codegraph@1.6.2",
+        "node",
+        "cart_total"
+      ],
+      "stdout": "results/codegraph/cart_total.txt",
+      "stderr": "results/codegraph/cart_total.stderr.txt",
+      "exit_code": 0,
+      "stdout_bytes": 972,
+      "stdout_characters": 966,
+      "stdout_lines": 17,
+      "tokens": null,
+      "tokens_note": "The CLI does not report a token count for this output."
+    },
+    "apply_coupon": {
+      "command": [
+        "npx",
+        "-y",
+        "@colbymchenry/codegraph@1.6.2",
+        "node",
+        "apply_coupon"
+      ],
+      "stdout": "results/codegraph/apply_coupon.txt",
+      "stderr": "results/codegraph/apply_coupon.stderr.txt",
+      "exit_code": 0,
+      "stdout_bytes": 970,
+      "stdout_characters": 964,
+      "stdout_lines": 21,
+      "tokens": null,
+      "tokens_note": "The CLI does not report a token count for this output."
+    },
+    "explore": {
+      "command": [
+        "npx",
+        "-y",
+        "@colbymchenry/codegraph@1.6.2",
+        "explore",
+        "why can the cart total become negative"
+      ],
+      "stdout": "results/codegraph/explore.txt",
+      "stderr": "results/codegraph/explore.stderr.txt",
+      "exit_code": 0,
+      "stdout_bytes": 10402,
+      "stdout_characters": 10386,
+      "stdout_lines": 306,
+      "tokens": null,
+      "tokens_note": "The CLI does not report a token count for this output.",
+      "symbols_returned": 25,
+      "files_returned": 4
+    }
+  }
+}

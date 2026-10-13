@@ -1,0 +1,67 @@
+     1	from dataclasses import dataclass
+     2	from datetime import date
+     3	from typing import Optional
+     4	
+     5	
+     6	@dataclass(frozen=True)
+     7	class Coupon:
+     8	    code: str
+     9	    kind: str          # "percent", "fixed", "shipping"
+    10	    value: float
+    11	    min_subtotal: float = 0.0
+    12	    members_only: bool = False
+    13	    expires: Optional[date] = None
+    14	
+    15	
+    16	COUPONS = {
+    17	    "SAVE10": Coupon("SAVE10", "percent", 10),
+    18	    "WELCOME5": Coupon("WELCOME5", "fixed", 5, min_subtotal=20),
+    19	    "FREESHIP": Coupon("FREESHIP", "shipping", 5),
+    20	    "VIP20": Coupon("VIP20", "percent", 20, members_only=True),
+    21	}
+    22	
+    23	
+    24	class CouponError(Exception):
+    25	    pass
+    26	
+    27	
+    28	def find_coupon(code: Optional[str]) -> Optional[Coupon]:
+    29	    if not code:
+    30	        return None
+    31	    return COUPONS.get(code.strip().upper())
+    32	
+    33	
+    34	def validate_coupon(coupon: Coupon, subtotal: float, is_member: bool, today: date) -> None:
+    35	    if coupon.expires and today > coupon.expires:
+    36	        raise CouponError(f"{coupon.code} expired on {coupon.expires}")
+    37	    if coupon.members_only and not is_member:
+    38	        raise CouponError(f"{coupon.code} is for members only")
+    39	    if subtotal < coupon.min_subtotal:
+    40	        raise CouponError(f"{coupon.code} needs a subtotal of at least {coupon.min_subtotal}")
+    41	
+    42	
+    43	def apply_coupon(total: float, coupon: Optional[Coupon]) -> float:
+    44	    if coupon is None:
+    45	        return total
+    46	    if coupon.kind == "percent":
+    47	        return total * (1 - coupon.value / 100)
+    48	    if coupon.kind == "fixed":
+    49	        return total - coupon.value
+    50	    if coupon.kind == "shipping":
+    51	        # free shipping is modelled as a flat discount
+    52	        return total - coupon.value
+    53	    raise CouponError(f"unknown coupon kind: {coupon.kind}")
+    54	
+    55	
+    56	def describe_coupon(coupon: Coupon) -> str:
+    57	    if coupon.kind == "percent":
+    58	        return f"{coupon.value:g}% off"
+    59	    if coupon.kind == "fixed":
+    60	        return f"${coupon.value:.2f} off orders over ${coupon.min_subtotal:.2f}"
+    61	    if coupon.kind == "shipping":
+    62	        return "free shipping"
+    63	    return coupon.code
+    64	
+    65	
+    66	def stackable(a: Coupon, b: Coupon) -> bool:
+    67	    return a.kind == "shipping" or b.kind == "shipping"

@@ -1,0 +1,1265 @@
+[
+  {
+    "id": 900001,
+    "number": 1,
+    "title": "Typo in checkout email (1)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 5,
+    "created_at": "2026-09-02T08:01:00Z",
+    "updated_at": "2026-10-02T10:03:00Z",
+    "body": "Steps and context for issue 1. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900002,
+    "number": 2,
+    "title": "Speed up product search (2)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-03T08:02:00Z",
+    "updated_at": "2026-10-03T10:06:00Z",
+    "body": "Steps and context for issue 2. Searching long product names should not block the search suggestions. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900003,
+    "number": 3,
+    "title": "Typo in checkout email (3)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-04T08:03:00Z",
+    "updated_at": "2026-10-04T10:09:00Z",
+    "body": "Steps and context for issue 3. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900004,
+    "number": 4,
+    "title": "Cache category list (4)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-05T08:04:00Z",
+    "updated_at": "2026-10-05T10:12:00Z",
+    "body": "Steps and context for issue 4. Repeated category requests make navigating the storefront slower. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900005,
+    "number": 5,
+    "title": "Support multiple currencies (5)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 2,
+    "created_at": "2026-09-06T08:05:00Z",
+    "updated_at": "2026-10-06T10:15:00Z",
+    "body": "Steps and context for issue 5. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900006,
+    "number": 6,
+    "title": "Improve test coverage for orders (6)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 2,
+    "created_at": "2026-09-07T08:06:00Z",
+    "updated_at": "2026-10-07T10:18:00Z",
+    "body": "Steps and context for issue 6. Add coverage for displaying the customer's previous purchases. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900007,
+    "number": 7,
+    "title": "Add dark mode to cart page (7)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 3,
+    "created_at": "2026-09-08T08:07:00Z",
+    "updated_at": "2026-10-08T10:21:00Z",
+    "body": "Steps and context for issue 7. The product grid flashes before the saved theme is applied. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900008,
+    "number": 8,
+    "title": "Clarify coupon docs (8)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 5,
+    "created_at": "2026-09-09T08:08:00Z",
+    "updated_at": "2026-10-09T10:24:00Z",
+    "body": "Steps and context for issue 8. The help page needs a clearer eligibility example for members. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900009,
+    "number": 9,
+    "title": "Speed up product search (9)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 7,
+    "created_at": "2026-09-10T08:09:00Z",
+    "updated_at": "2026-10-10T10:27:00Z",
+    "body": "Steps and context for issue 9. Searching long product names should not block the search suggestions. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900010,
+    "number": 10,
+    "title": "Show stock count on product card (10)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 0,
+    "created_at": "2026-09-11T08:10:00Z",
+    "updated_at": "2026-10-01T10:30:00Z",
+    "body": "Steps and context for issue 10. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900011,
+    "number": 11,
+    "title": "Clarify coupon docs (11)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-12T08:11:00Z",
+    "updated_at": "2026-10-02T10:33:00Z",
+    "body": "Steps and context for issue 11. The help page needs a clearer eligibility example for members. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900012,
+    "number": 12,
+    "title": "Add dark mode to cart page (12)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 7,
+    "created_at": "2026-09-13T08:12:00Z",
+    "updated_at": "2026-10-03T10:36:00Z",
+    "body": "Steps and context for issue 12. The product grid flashes before the saved theme is applied. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900013,
+    "number": 13,
+    "title": "Support multiple currencies (13)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 0,
+    "created_at": "2026-09-14T08:13:00Z",
+    "updated_at": "2026-10-04T10:39:00Z",
+    "body": "Steps and context for issue 13. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900014,
+    "number": 14,
+    "title": "Show stock count on product card (14)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 5,
+    "created_at": "2026-09-15T08:14:00Z",
+    "updated_at": "2026-10-05T10:42:00Z",
+    "body": "Steps and context for issue 14. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900015,
+    "number": 15,
+    "title": "Improve test coverage for orders (15)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 7,
+    "created_at": "2026-09-16T08:15:00Z",
+    "updated_at": "2026-10-06T10:45:00Z",
+    "body": "Steps and context for issue 15. Add coverage for displaying the customer's previous purchases. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900016,
+    "number": 16,
+    "title": "Cache category list (16)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 3,
+    "created_at": "2026-09-17T08:16:00Z",
+    "updated_at": "2026-10-07T10:48:00Z",
+    "body": "Steps and context for issue 16. Repeated category requests make navigating the storefront slower. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900017,
+    "number": 17,
+    "title": "Paginate order history (17)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 2,
+    "created_at": "2026-09-18T08:17:00Z",
+    "updated_at": "2026-10-08T10:51:00Z",
+    "body": "Steps and context for issue 17. Accounts with many purchases need a next-page navigation control. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900018,
+    "number": 18,
+    "title": "Support multiple currencies (18)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 1,
+    "created_at": "2026-09-19T08:18:00Z",
+    "updated_at": "2026-10-09T10:54:00Z",
+    "body": "Steps and context for issue 18. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900019,
+    "number": 19,
+    "title": "Support multiple currencies (19)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 3,
+    "created_at": "2026-09-20T08:19:00Z",
+    "updated_at": "2026-10-10T10:57:00Z",
+    "body": "Steps and context for issue 19. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900020,
+    "number": 20,
+    "title": "Typo in checkout email (20)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-21T08:20:00Z",
+    "updated_at": "2026-10-01T10:00:00Z",
+    "body": "Steps and context for issue 20. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900021,
+    "number": 21,
+    "title": "Show stock count on product card (21)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-22T08:21:00Z",
+    "updated_at": "2026-10-02T10:03:00Z",
+    "body": "Steps and context for issue 21. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900022,
+    "number": 22,
+    "title": "Refactor price formatting (22)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-23T08:22:00Z",
+    "updated_at": "2026-10-03T10:06:00Z",
+    "body": "Steps and context for issue 22. The product card should format currency consistently with the detail page. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900023,
+    "number": 23,
+    "title": "Refactor price formatting (23)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 0,
+    "created_at": "2026-09-24T08:23:00Z",
+    "updated_at": "2026-10-04T10:09:00Z",
+    "body": "Steps and context for issue 23. The product card should format currency consistently with the detail page. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900024,
+    "number": 24,
+    "title": "Paginate order history (24)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-25T08:24:00Z",
+    "updated_at": "2026-10-05T10:12:00Z",
+    "body": "Steps and context for issue 24. Accounts with many purchases need a next-page navigation control. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900025,
+    "number": 25,
+    "title": "Typo in checkout email (25)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 8,
+    "created_at": "2026-09-26T08:25:00Z",
+    "updated_at": "2026-10-06T10:15:00Z",
+    "body": "Steps and context for issue 25. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900026,
+    "number": 26,
+    "title": "Paginate order history (26)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-27T08:26:00Z",
+    "updated_at": "2026-10-07T10:18:00Z",
+    "body": "Steps and context for issue 26. Accounts with many purchases need a next-page navigation control. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900027,
+    "number": 27,
+    "title": "Typo in checkout email (27)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-28T08:27:00Z",
+    "updated_at": "2026-10-08T10:21:00Z",
+    "body": "Steps and context for issue 27. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900028,
+    "number": 28,
+    "title": "Typo in checkout email (28)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 3,
+    "created_at": "2026-09-01T08:28:00Z",
+    "updated_at": "2026-10-09T10:24:00Z",
+    "body": "Steps and context for issue 28. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900029,
+    "number": 29,
+    "title": "Add dark mode to cart page (29)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 1,
+    "created_at": "2026-09-02T08:29:00Z",
+    "updated_at": "2026-10-10T10:27:00Z",
+    "body": "Steps and context for issue 29. The product grid flashes before the saved theme is applied. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900030,
+    "number": 30,
+    "title": "Paginate order history (30)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 8,
+    "created_at": "2026-09-03T08:30:00Z",
+    "updated_at": "2026-10-01T10:30:00Z",
+    "body": "Steps and context for issue 30. Accounts with many purchases need a next-page navigation control. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900031,
+    "number": 31,
+    "title": "Speed up product search (31)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 5,
+    "created_at": "2026-09-04T08:31:00Z",
+    "updated_at": "2026-10-02T10:33:00Z",
+    "body": "Steps and context for issue 31. Searching long product names should not block the search suggestions. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900032,
+    "number": 32,
+    "title": "Typo in checkout email (32)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 5,
+    "created_at": "2026-09-05T08:32:00Z",
+    "updated_at": "2026-10-03T10:36:00Z",
+    "body": "Steps and context for issue 32. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900033,
+    "number": 33,
+    "title": "Show stock count on product card (33)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 5,
+    "created_at": "2026-09-06T08:33:00Z",
+    "updated_at": "2026-10-04T10:39:00Z",
+    "body": "Steps and context for issue 33. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900034,
+    "number": 34,
+    "title": "Typo in checkout email (34)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 8,
+    "created_at": "2026-09-07T08:34:00Z",
+    "updated_at": "2026-10-05T10:42:00Z",
+    "body": "Steps and context for issue 34. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900035,
+    "number": 35,
+    "title": "Refactor price formatting (35)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 1,
+    "created_at": "2026-09-08T08:35:00Z",
+    "updated_at": "2026-10-06T10:45:00Z",
+    "body": "Steps and context for issue 35. The product card should format currency consistently with the detail page. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900036,
+    "number": 36,
+    "title": "Support multiple currencies (36)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 2,
+    "created_at": "2026-09-09T08:36:00Z",
+    "updated_at": "2026-10-07T10:48:00Z",
+    "body": "Steps and context for issue 36. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900037,
+    "number": 37,
+    "title": "Support multiple currencies (37)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 0,
+    "created_at": "2026-09-10T08:37:00Z",
+    "updated_at": "2026-10-08T10:51:00Z",
+    "body": "Steps and context for issue 37. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900038,
+    "number": 38,
+    "title": "Refactor price formatting (38)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-11T08:38:00Z",
+    "updated_at": "2026-10-09T10:54:00Z",
+    "body": "Steps and context for issue 38. The product card should format currency consistently with the detail page. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900039,
+    "number": 39,
+    "title": "Support multiple currencies (39)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 6,
+    "created_at": "2026-09-12T08:39:00Z",
+    "updated_at": "2026-10-10T10:57:00Z",
+    "body": "Steps and context for issue 39. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900040,
+    "number": 40,
+    "title": "Typo in checkout email (40)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 8,
+    "created_at": "2026-09-13T08:40:00Z",
+    "updated_at": "2026-10-01T10:00:00Z",
+    "body": "Steps and context for issue 40. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900041,
+    "number": 41,
+    "title": "Show stock count on product card (41)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 2,
+    "created_at": "2026-09-14T08:41:00Z",
+    "updated_at": "2026-10-02T10:03:00Z",
+    "body": "Steps and context for issue 41. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900042,
+    "number": 42,
+    "title": "Cart total goes negative with FREESHIP coupon",
+    "state": "open",
+    "labels": [
+      {
+        "name": "bug"
+      },
+      {
+        "name": "regression"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 8,
+    "created_at": "2026-10-08T09:12:00Z",
+    "updated_at": "2026-10-10T16:40:00Z",
+    "body": "Applying FREESHIP to a cart under $5 makes the total negative (e.g. a $3 cart shows -$2). cart_total calls apply_coupon, which subtracts 5 without clamping at zero. Started after the coupon refactor in #37."
+  },
+  {
+    "id": 900043,
+    "number": 43,
+    "title": "Cache category list (43)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 0,
+    "created_at": "2026-09-16T08:43:00Z",
+    "updated_at": "2026-10-04T10:09:00Z",
+    "body": "Steps and context for issue 43. Repeated category requests make navigating the storefront slower. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900044,
+    "number": 44,
+    "title": "Paginate order history (44)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 0,
+    "created_at": "2026-09-17T08:44:00Z",
+    "updated_at": "2026-10-05T10:12:00Z",
+    "body": "Steps and context for issue 44. Accounts with many purchases need a next-page navigation control. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900045,
+    "number": 45,
+    "title": "Improve test coverage for orders (45)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-18T08:45:00Z",
+    "updated_at": "2026-10-06T10:15:00Z",
+    "body": "Steps and context for issue 45. Add coverage for displaying the customer's previous purchases. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900046,
+    "number": 46,
+    "title": "Clarify coupon docs (46)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 1,
+    "created_at": "2026-09-19T08:46:00Z",
+    "updated_at": "2026-10-07T10:18:00Z",
+    "body": "Steps and context for issue 46. The help page needs a clearer eligibility example for members. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900047,
+    "number": 47,
+    "title": "Cache category list (47)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 9,
+    "created_at": "2026-09-20T08:47:00Z",
+    "updated_at": "2026-10-08T10:21:00Z",
+    "body": "Steps and context for issue 47. Repeated category requests make navigating the storefront slower. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900048,
+    "number": 48,
+    "title": "Typo in checkout email (48)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 0,
+    "created_at": "2026-09-21T08:48:00Z",
+    "updated_at": "2026-10-09T10:24:00Z",
+    "body": "Steps and context for issue 48. The order confirmation email contains a typo in the delivery heading. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900049,
+    "number": 49,
+    "title": "Speed up product search (49)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 5,
+    "created_at": "2026-09-22T08:49:00Z",
+    "updated_at": "2026-10-10T10:27:00Z",
+    "body": "Steps and context for issue 49. Searching long product names should not block the search suggestions. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900050,
+    "number": 50,
+    "title": "Refactor price formatting (50)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 8,
+    "created_at": "2026-09-23T08:50:00Z",
+    "updated_at": "2026-10-01T10:30:00Z",
+    "body": "Steps and context for issue 50. The product card should format currency consistently with the detail page. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900051,
+    "number": 51,
+    "title": "Refactor price formatting (51)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 1,
+    "created_at": "2026-09-24T08:51:00Z",
+    "updated_at": "2026-10-02T10:33:00Z",
+    "body": "Steps and context for issue 51. The product card should format currency consistently with the detail page. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900052,
+    "number": 52,
+    "title": "Show stock count on product card (52)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-25T08:52:00Z",
+    "updated_at": "2026-10-03T10:36:00Z",
+    "body": "Steps and context for issue 52. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900053,
+    "number": 53,
+    "title": "Support multiple currencies (53)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "question"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-26T08:53:00Z",
+    "updated_at": "2026-10-04T10:39:00Z",
+    "body": "Steps and context for issue 53. Show a currency preference in the storefront account settings. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900054,
+    "number": 54,
+    "title": "Clarify coupon docs (54)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-27T08:54:00Z",
+    "updated_at": "2026-10-05T10:42:00Z",
+    "body": "Steps and context for issue 54. The help page needs a clearer eligibility example for members. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900055,
+    "number": 55,
+    "title": "Speed up product search (55)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "mina",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-28T08:55:00Z",
+    "updated_at": "2026-10-06T10:45:00Z",
+    "body": "Steps and context for issue 55. Searching long product names should not block the search suggestions. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900056,
+    "number": 56,
+    "title": "Show stock count on product card (56)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "kai",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 6,
+    "created_at": "2026-09-01T08:56:00Z",
+    "updated_at": "2026-10-07T10:48:00Z",
+    "body": "Steps and context for issue 56. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900057,
+    "number": 57,
+    "title": "Refactor price formatting (57)",
+    "state": "open",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1001,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 3,
+    "created_at": "2026-09-02T08:57:00Z",
+    "updated_at": "2026-10-08T10:51:00Z",
+    "body": "Steps and context for issue 57. The product card should format currency consistently with the detail page. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900058,
+    "number": 58,
+    "title": "Speed up product search (58)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1002,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 6,
+    "created_at": "2026-09-03T08:58:00Z",
+    "updated_at": "2026-10-09T10:54:00Z",
+    "body": "Steps and context for issue 58. Searching long product names should not block the search suggestions. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900059,
+    "number": 59,
+    "title": "Speed up product search (59)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "enhancement"
+      }
+    ],
+    "user": {
+      "login": "ren",
+      "id": 1003,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 4,
+    "created_at": "2026-09-04T08:59:00Z",
+    "updated_at": "2026-10-10T10:57:00Z",
+    "body": "Steps and context for issue 59. Searching long product names should not block the search suggestions. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  },
+  {
+    "id": 900060,
+    "number": 60,
+    "title": "Show stock count on product card (60)",
+    "state": "closed",
+    "labels": [
+      {
+        "name": "docs"
+      }
+    ],
+    "user": {
+      "login": "sora",
+      "id": 1000,
+      "type": "User",
+      "site_admin": false
+    },
+    "comments": 6,
+    "created_at": "2026-09-05T08:00:00Z",
+    "updated_at": "2026-10-01T10:00:00Z",
+    "body": "Steps and context for issue 60. Show remaining stock beside the size selector on product detail pages. Reproduced in the demo storefront with a signed-in test account. Please check the associated page and add a focused regression test."
+  }
+]

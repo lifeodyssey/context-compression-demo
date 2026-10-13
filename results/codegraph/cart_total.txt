@@ -1,0 +1,17 @@
+**cart_total** (function)
+
+**Location:** shop/cart.py:21
+**Signature:** `(items: list[dict], coupon: Optional[str] = None) -> float`
+
+Return merchandise total after one coupon, before shipping and tax.
+
+```python
+21	def cart_total(items: list[dict], coupon: Optional[str] = None) -> float:
+22	    """Return merchandise total after one coupon, before shipping and tax."""
+23	    total = subtotal(items)
+24	    total = apply_coupon(total, find_coupon(coupon))
+25	    return round(total, 2)
+```
+**Trail — codegraph_node any of these to follow it (no Read needed)**
+**Calls →** find_coupon (shop/coupons.py:28), apply_coupon (shop/coupons.py:43), subtotal (shop/cart.py:17)
+**Called by ←** test_empty_cart_total (tests/test_cart.py:37), checkout_total (shop/cart.py:69), test_cart_total_without_coupon (tests/test_cart.py:41), test_freeship_never_negative (tests/test_cart.py:50), test_cart_total_with_save10 (tests/test_cart.py:45), test_cart.py (tests/test_cart.py:1)

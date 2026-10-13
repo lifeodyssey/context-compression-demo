@@ -1,0 +1,21 @@
+**apply_coupon** (function)
+
+**Location:** shop/coupons.py:43
+**Signature:** `(total: float, coupon: Optional[Coupon]) -> float`
+
+```python
+43	def apply_coupon(total: float, coupon: Optional[Coupon]) -> float:
+44	    if coupon is None:
+45	        return total
+46	    if coupon.kind == "percent":
+47	        return total * (1 - coupon.value / 100)
+48	    if coupon.kind == "fixed":
+49	        return total - coupon.value
+50	    if coupon.kind == "shipping":
+51	        # free shipping is modelled as a flat discount
+52	        return total - coupon.value
+53	    raise CouponError(f"unknown coupon kind: {coupon.kind}")
+```
+**Trail — codegraph_node any of these to follow it (no Read needed)**
+**Calls →** CouponError (shop/coupons.py:24)
+**Called by ←** test_apply_coupon_rejects_unknown_kind (tests/test_coupons.py:26), test_apply_coupon (tests/test_coupons.py:22), cart_total (shop/cart.py:21), cart.py (shop/cart.py:1), test_coupons.py (tests/test_coupons.py:1)

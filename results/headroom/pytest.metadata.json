@@ -1,0 +1,81 @@
+{
+  "script": "scripts/run_headroom.sh",
+  "input": "results/pytest/raw.txt",
+  "version": "0.40.0",
+  "model_for_token_counting": "claude-sonnet-4-5-20250929",
+  "query": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
+  "options": {
+    "kompress_model": "disabled",
+    "protect_recent": 0
+  },
+  "input_dimensions": {
+    "bytes": 8087,
+    "characters": 8087,
+    "lines": 109
+  },
+  "output_dimensions": {
+    "bytes": 8087,
+    "characters": 8087,
+    "lines": 109
+  },
+  "unchanged": true,
+  "tokens_before": 2271,
+  "tokens_after": 2271,
+  "tokens_saved": 0,
+  "token_count_basis": "Headroom local estimator; complete three-message conversation, not provider usage",
+  "transforms_applied": [
+    "router:protected:user_message"
+  ],
+  "routing_events": [
+    {
+      "event": "content_router_input",
+      "chars": 8087,
+      "bytes": 8087,
+      "detected_content_type": "text",
+      "detection_confidence": 0.5,
+      "selected_strategy": "text",
+      "selection_reason": "content_detection"
+    },
+    {
+      "event": "content_router_strategy_result",
+      "requested_strategy": "text",
+      "actual_strategy": "text",
+      "strategy_chain": [
+        "text"
+      ],
+      "compressor": "KompressCompressor",
+      "reason": "text_uses_kompress",
+      "tokens_saved": 0,
+      "compression_ratio": 1.0
+    },
+    {
+      "event": "content_router_output",
+      "selected_strategy": "text",
+      "tokens_saved": 0,
+      "compression_ratio": 1.0
+    }
+  ],
+  "diagnostics": [
+    {
+      "message_index": 0,
+      "role": "user",
+      "tokens_before": 16,
+      "tokens_after": 16,
+      "action": "protected:user_message"
+    },
+    {
+      "message_index": 1,
+      "role": "assistant",
+      "tokens_before": 10,
+      "tokens_after": 10,
+      "action": "protected:content_blocks_unchanged"
+    },
+    {
+      "message_index": 2,
+      "role": "user",
+      "tokens_before": 2230,
+      "tokens_after": 2230,
+      "action": "protected:content_blocks_unchanged"
+    }
+  ]
+}

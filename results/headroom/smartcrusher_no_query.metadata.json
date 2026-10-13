@@ -1,0 +1,47 @@
+{
+  "script": "scripts/run_headroom.sh",
+  "input": "data/issues.json",
+  "version": "0.40.0",
+  "query": "",
+  "options": {
+    "with_compaction": false,
+    "lossless_only": false
+  },
+  "input_dimensions": {
+    "bytes": 38361,
+    "characters": 38361,
+    "lines": 1265
+  },
+  "output_dimensions": {
+    "bytes": 7701,
+    "characters": 7701,
+    "lines": 1
+  },
+  "was_modified": true,
+  "strategy": "smart_sample(60->15)",
+  "tokens_before": null,
+  "tokens_after": null,
+  "token_count_basis": "SmartCrusher.crush does not report token counts",
+  "issues_before": 60,
+  "issues_kept": 15,
+  "issues_elided": 45,
+  "kept_issue_numbers": [
+    1,
+    2,
+    6,
+    10,
+    14,
+    18,
+    22,
+    26,
+    30,
+    34,
+    38,
+    42,
+    43,
+    45,
+    60
+  ],
+  "issue_42_kept": true,
+  "preservation_basis": "original unique issue title present in output"
+}

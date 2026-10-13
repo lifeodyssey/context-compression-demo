@@ -1,0 +1,152 @@
+{
+  "script": "scripts/run_headroom.sh",
+  "input": "data/issues.json",
+  "version": "0.40.0",
+  "model_for_token_counting": "claude-sonnet-4-5-20250929",
+  "query": "Why does the FREESHIP coupon make the cart total negative? Fix it.",
+  "options": {
+    "kompress_model": "disabled",
+    "protect_recent": 0
+  },
+  "input_dimensions": {
+    "bytes": 38361,
+    "characters": 38361,
+    "lines": 1265
+  },
+  "output_dimensions": {
+    "bytes": 22610,
+    "characters": 22610,
+    "lines": 61
+  },
+  "unchanged": false,
+  "tokens_before": 11484,
+  "tokens_after": 6563,
+  "tokens_saved": 4921,
+  "token_count_basis": "Headroom local estimator; complete three-message conversation, not provider usage",
+  "transforms_applied": [
+    "router:protected:user_message",
+    "router:tool_result:mixed"
+  ],
+  "routing_events": [
+    {
+      "event": "content_router_input",
+      "chars": 38361,
+      "bytes": 38361,
+      "detected_content_type": "json_array",
+      "detection_confidence": 1.0,
+      "selected_strategy": "mixed",
+      "selection_reason": "mixed_content"
+    },
+    {
+      "event": "content_router_mixed_sections"
+    },
+    {
+      "event": "content_router_strategy_result",
+      "requested_strategy": "smart_crusher",
+      "actual_strategy": "smart_crusher",
+      "strategy_chain": [
+        "smart_crusher"
+      ],
+      "compressor": "SmartCrusher",
+      "reason": "smart_crusher",
+      "tokens_saved": 6159,
+      "compression_ratio": 0.48623623623623624
+    },
+    {
+      "event": "content_router_output",
+      "selected_strategy": "mixed",
+      "tokens_saved": 6159,
+      "compression_ratio": 0.48623623623623624
+    }
+  ],
+  "diagnostics": [
+    {
+      "message_index": 0,
+      "role": "user",
+      "tokens_before": 16,
+      "tokens_after": 16,
+      "action": "protected:user_message"
+    },
+    {
+      "message_index": 1,
+      "role": "assistant",
+      "tokens_before": 11,
+      "tokens_after": 11,
+      "action": "protected:content_blocks_unchanged"
+    },
+    {
+      "message_index": 2,
+      "role": "user",
+      "tokens_before": 11442,
+      "tokens_after": 6521,
+      "action": "compressed:content_blocks"
+    }
+  ],
+  "issues_before": 60,
+  "issues_kept": 60,
+  "issues_elided": 0,
+  "kept_issue_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60
+  ],
+  "issue_42_kept": true,
+  "preservation_basis": "original unique issue title present in output"
+}
