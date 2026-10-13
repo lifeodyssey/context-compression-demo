@@ -182,8 +182,46 @@ the old marker claim would undermine the data realism correction.
 
 ## Cross-path verification
 
-The final cross-path report is recorded after cloning the implementation
-commit, running `scripts/run_all.sh` in that clone, and comparing the complete
-`results/` trees. The clone is then deleted. Only explicitly enumerated timing,
-recall-hash and CCR-handle differences are allowed; none of the result files
-are post-edited to make them match.
+A clean local `git clone --no-local` of implementation commit
+`59c155d1c756e7e1ca43486b207232a9ca8bc26f` was run in
+`/private/tmp/ccdemo-check-kzt3w32w`. All three generated data files were
+byte-identical. `scripts/run_all.sh` completed successfully there. The complete
+comparison covered **78 result files: 65 byte-identical, 13 differing**, with
+**21 changed fields/text hunks, all explained; zero unexpected differences**.
+The full before/after evidence is [machine-independence.json](machine-independence.json).
+The clone and the temporary commit checkout were deleted after bundle export.
+
+Every differing field or text location is listed below. No result was edited
+to remove a difference; the comparator checks the raw captured files.
+
+| File(s) | Changed field / line | Primary -> clone |
+| --- | --- | --- |
+| `pytest/raw.txt:89`, `headroom/pytest.txt:89`, `caveman/pytest_auto.txt:89`, `caveman/pytest_terminal.txt:85` | pytest summary elapsed seconds | 0.06s -> 0.05s |
+| `headroom/pytest.messages.json` | `[2].content[0].content`, same summary inside the string | 0.06s -> 0.05s |
+| `rtk/pytest.txt:1`, `rtk/pytest.recalled.txt:19` | RTK child's pytest elapsed seconds | 0.04s -> 0.05s |
+| `rtk/pytest.txt:8` | recall hash | `0bb554a7577e` -> `16a95bcf0ad7` |
+| `caveman/pytest_terminal.metadata.json`, `metrics.json` | `recovery_handle`; `outputs.caveman/pytest_terminal.tool_metadata.recovery_handle` | `ccr_38684f25d7f231b958bd5adc153f740d` -> `ccr_328fe570f2ff6fd32a1f3e555ca4509e` |
+| `rtk/gain.json` | `summary.total_time_ms`; `summary.avg_time_ms` | 1157 -> 1018; 578 -> 509 |
+| `codegraph/init.txt:12` | index duration, including its display unit | 1.3s -> 930ms |
+| `codegraph/metrics.json` | `commands.init.stdout_bytes`; `commands.init.stdout_characters` | 246 -> 247; 226 -> 227 |
+| `metrics.json` | `codegraph_metadata.metrics.json.commands.init.stdout_bytes`; same prefix `.stdout_characters` | 246 -> 247; 226 -> 227 |
+| `headroom/routing.log:6-7` | pytest transform ms; pipeline `content_router`; `pipeline_total` | 13.6 -> 13.1; 14 -> 13; 14 -> 13 |
+| `headroom/routing.log:12` | lossless table `elapsed_ns` | 5956250 -> 11425041 |
+| `headroom/routing.log:15` | cache average ns | 750 -> 792 |
+| `headroom/routing.log:17-18` | issue transform ms; pipeline `content_router`; `compressor:mixed`; `pipeline_total` | 28.7 -> 36.8; 29 -> 37; 25 -> 33; 29 -> 37 |
+| `headroom/routing.log:19-20` | no-query and query SmartCrusher `elapsed_ns` | 4733500 -> 5194959; 4046834 -> 4343125 |
+
+The CCR handle is content-addressed (`engine/ccr/store.go:218-220`), so its
+change follows the changed pytest duration; it is not random sampling. The
+CodeGraph duration switches units and grows by one character. Its four derived
+JSON counts are accepted only after verifying both actual init outputs differ
+solely in the duration and that each count equals the corresponding raw file.
+Node counts, source locations, retention, compression decisions and all other
+measurements remain unchanged.
+
+`rg -n -F` over each result tree with the local username, home prefixes, real
+repository path and clone path returned exit 1 / zero matches. Original Git
+config/hooks hashes were unchanged; the shop source and both log fixtures
+matched the baseline exactly. All runner commands completed and cleaned their
+temporary tool homes and CodeGraph indexes. The environment did not permit a
+system-wide `ps` listing; no background service was started by this workflow.

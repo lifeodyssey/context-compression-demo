@@ -28,8 +28,8 @@ def canonical_text(filename, text):
     if filename == 'rtk/pytest.txt':
         rules.append(('RTK recall hash', r'(?<=rtk recall )[0-9a-f]{12}\b', '<recall-hash>'))
     if filename == 'codegraph/init.txt':
-        rules.append(('CodeGraph index elapsed seconds',
-                      r'(?<= edges in )\d+(?:\.\d+)?s\b', '<index-time>'))
+        rules.append(('CodeGraph index elapsed time (s or ms)',
+                      r'(?<= edges in )\d+(?:\.\d+)?(?:ms|s)\b', '<index-time>'))
     if filename == 'headroom/routing.log':
         rules.extend([
             ('SmartCrusher elapsed nanoseconds', r'(?<=elapsed_ns=)\d+\b', '<elapsed-ns>'),
@@ -46,7 +46,36 @@ def canonical_text(filename, text):
     return text, reasons
 
 
-def allowed_json_difference(filename, field, before, after):
+def verified_init_dimensions(left, right):
+    """Authorize derived counts only when both actual init outputs prove them."""
+    paths = [tree / 'codegraph/init.txt' for tree in (left, right)]
+    if not all(path.is_file() for path in paths):
+        return {}
+    raw = [path.read_bytes() for path in paths]
+    try:
+        texts = [value.decode('utf-8') for value in raw]
+    except UnicodeDecodeError:
+        return {}
+    normalized = [canonical_text('codegraph/init.txt', value) for value in texts]
+    if (texts[0] == texts[1] or normalized[0][0] != normalized[1][0]
+            or not all(reasons for _, reasons in normalized)):
+        return {}
+    verified = {}
+    for dimension, values in (
+            ('stdout_bytes', tuple(len(value) for value in raw)),
+            ('stdout_characters', tuple(len(value) for value in texts))):
+        for filename, prefix in (
+                ('codegraph/metrics.json', '$.commands.init.'),
+                ('metrics.json', '$.codegraph_metadata.metrics.json.commands.init.')):
+            verified[(filename, prefix + dimension)] = values
+    return verified
+
+
+def allowed_json_difference(filename, field, before, after, verified_dimensions=None):
+    expected = (verified_dimensions or {}).get((filename, field))
+    if (expected is not None and type(before) is int and type(after) is int
+            and (before, after) == expected):
+        return ['CodeGraph init dimension matches actual output; only index duration differs']
     if (filename == 'rtk/gain.json' and field in
             ('$.summary.total_time_ms', '$.summary.avg_time_ms')
             and type(before) is int and type(after) is int):
@@ -57,7 +86,7 @@ def allowed_json_difference(filename, field, before, after):
             and isinstance(before, str) and isinstance(after, str)
             and re.fullmatch(r'ccr_[0-9a-f]{32}', before)
             and re.fullmatch(r'ccr_[0-9a-f]{32}', after)):
-        return ['Caveman ephemeral CCR handle']
+        return ['Caveman content-addressed CCR handle']
     if isinstance(before, str) and isinstance(after, str):
         old, old_reasons = canonical_text(filename, before)
         new, new_reasons = canonical_text(filename, after)
@@ -66,7 +95,7 @@ def allowed_json_difference(filename, field, before, after):
     return []
 
 
-def json_changes(filename, before, after, field='$'):
+def json_changes(filename, before, after, field='$', verified_dimensions=None):
     if type(before) is dict and type(after) is dict:
         for key in sorted(before.keys() | after.keys()):
             location = f'{field}.{key}'
@@ -74,12 +103,12 @@ def json_changes(filename, before, after, field='$'):
                 yield {'field': location, 'before': before.get(key), 'after': after.get(key),
                        'accepted': False, 'reason': ['JSON key added or removed']}
             else:
-                yield from json_changes(filename, before[key], after[key], location)
+                yield from json_changes(filename, before[key], after[key], location, verified_dimensions)
     elif type(before) is list and type(after) is list and len(before) == len(after):
         for index, (old, new) in enumerate(zip(before, after)):
-            yield from json_changes(filename, old, new, f'{field}[{index}]')
+            yield from json_changes(filename, old, new, f'{field}[{index}]', verified_dimensions)
     elif type(before) is not type(after) or before != after:
-        reasons = allowed_json_difference(filename, field, before, after)
+        reasons = allowed_json_difference(filename, field, before, after, verified_dimensions)
         yield {'field': field, 'before': before, 'after': after,
                'accepted': bool(reasons), 'reason': reasons or ['unexplained value change']}
 
@@ -105,6 +134,7 @@ def compare_trees(left, right):
     right_files = {str(path.relative_to(right)): path for path in right.rglob('*') if path.is_file()}
     differences = []
     identical = []
+    verified_dimensions = verified_init_dimensions(left, right)
     for name in sorted(left_files.keys() | right_files.keys()):
         if name not in left_files or name not in right_files:
             differences.append({'file': name, 'accepted': False, 'reason': ['file added or removed'],
@@ -121,7 +151,8 @@ def compare_trees(left, right):
         else:
             if name.endswith('.json'):
                 try:
-                    changes = list(json_changes(name, json.loads(old_text), json.loads(new_text)))
+                    changes = list(json_changes(name, json.loads(old_text), json.loads(new_text),
+                                                verified_dimensions=verified_dimensions))
                 except json.JSONDecodeError:
                     changes = list(text_changes(name, old_text, new_text))
                 if not changes:
