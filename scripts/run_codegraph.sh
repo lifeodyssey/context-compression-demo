@@ -94,7 +94,7 @@ for name, arguments in (
         commands[name]["symbols_returned"] = int(found[1])
         commands[name]["files_returned"] = int(found[2])
 
-with sqlite3.connect(f"file:{sys.argv[2]}?mode=ro", uri=True) as database:
+with sqlite3.connect(sys.argv[2]) as database:
     indexed_files = [row[0] for row in database.execute("SELECT path FROM files ORDER BY path")]
     indexed_nodes = database.execute("SELECT COUNT(*) FROM nodes").fetchone()[0]
     indexed_edges = database.execute("SELECT COUNT(*) FROM edges").fetchone()[0]
