@@ -118,7 +118,7 @@ freeship = [line for line in app if 'coupon=FREESHIP' in line]
 pricing = [line for line in syn if 'service=pricing' in line]
 assert len(app) == 300 and len(syn) == 303
 assert len(freeship) == len(pricing) == 3
-assert all('service=checkout' in line and 'total=-2.00' in line for line in freeship)
+assert all('service=checkout' in line and 'total=0.00' in line for line in freeship)
 assert all(not re.search(r'FREESHIP|coupon|negative', line, re.I) for line in pricing)
 
 production = [ROOT / 'shop' / f'{name}.py' for name in ['models', 'coupons', 'shipping', 'tax', 'cart']]

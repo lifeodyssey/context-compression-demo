@@ -23,6 +23,11 @@ def test_apply_coupon(code, expected):
     assert apply_coupon(40, find_coupon(code)) == expected
 
 
+@pytest.mark.parametrize("value", [100, 101, 150])
+def test_apply_percent_coupon_never_negative(value):
+    assert apply_coupon(40, Coupon("BIGPCT", "percent", value)) == 0.0
+
+
 def test_apply_coupon_rejects_unknown_kind():
     with pytest.raises(CouponError, match="unknown coupon kind"):
         apply_coupon(40, Coupon("BROKEN", "unknown", 10))

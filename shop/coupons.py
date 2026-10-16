@@ -44,7 +44,7 @@ def apply_coupon(total: float, coupon: Optional[Coupon]) -> float:
     if coupon is None:
         return total
     if coupon.kind == "percent":
-        return total * (1 - coupon.value / 100)
+        return max(total * (1 - coupon.value / 100), 0.0)
     if coupon.kind == "fixed":
         return max(total - coupon.value, 0.0)
     if coupon.kind == "shipping":

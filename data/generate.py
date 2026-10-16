@@ -148,7 +148,7 @@ def main() -> None:
     relevant = [issue for issue in issues if "FREESHIP" in json.dumps(issue)]
     assert len(issues) == 60 and [issue["number"] for issue in relevant] == [42]
     assert len(logs) == 300 and len(synonyms) == 303
-    assert sum("coupon=FREESHIP" in line and "total=-2.00" in line for line in logs) == 3
+    assert sum("coupon=FREESHIP" in line and "total=0.00" in line for line in logs) == 3
     assert sum("service=pricing" in line for line in synonyms) == 3
     output = ROOT / "data"
     (output / "issues.json").write_text(json.dumps(issues, indent=2) + "\n", encoding="utf-8")
